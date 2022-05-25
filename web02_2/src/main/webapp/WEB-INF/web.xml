@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>web02_2</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <filter>
+  	<filter-name>FilterTest</filter-name>
+  	<filter-class>com.company.common.FilterTest</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>FilterTest</filter-name>
+  	<url-pattern>*</url-pattern>
+  </filter-mapping>
+  <filter>
+  	<filter-name>characterEncoding</filter-name>
+  	<filter-class>com.company.common.CharacterEncoding</filter-class>
+  	</filter>
+  <filter-mapping>
+  	<filter-name>characterEncoding</filter-name>
+  	<url-pattern>*</url-pattern>
+  </filter-mapping>
+    <filter>
+  	<filter-name>LogFilter</filter-name>
+  	<filter-class>com.company.common.LogFilter</filter-class>
+  	</filter>
+  <filter-mapping>
+  	<filter-name>LogFilter</filter-name>
+  	<url-pattern>*</url-pattern>
+  </filter-mapping>
+      <filter>
+  	<filter-name>EncrpytFiter</filter-name>
+  	<filter-class>com.company.common.EncrpytFilter</filter-class>
+  	</filter>
+  <filter-mapping>
+  	<filter-name>EncrpytFilter</filter-name>
+  	<url-pattern>*</url-pattern>
+  </filter-mapping>
+  
+  <!-- 서블릿 컨텍스트(application=ServletContext)=전역변수 등록 -->
+  <context-param>
+	  <param-name>biz</param-name>
+	  <param-value>leeminhwan</param-value>
+  </context-param>
+  <!-- 서블릿 경로 등록 : URL을 호출시 해당 서블릿으로 연결됨 -->
+  <servlet>
+  	<servlet-name>A01FilterOne</servlet-name>
+  	<servlet-class>com.company.view.A01Filter</servlet-class>
+  </servlet>
+  	<servlet-mapping>
+  	<servlet-name>A01FilterOne</servlet-name>
+  	<url-pattern>/A01FilterOne</url-pattern>
+  	</servlet-mapping>
+  	
+  	<!-- 에러페이지 등록 -->
+  	<error-page>
+  	<exception-type>java.lang.NumberFormatException</exception-type>
+  	<location>/err/ErrorPage.jsp</location>
+  	</error-page>
+  	<error-page>
+  		<exception-type>java.lang.NullPointerException</exception-type>
+  		<location>/err/ErrorPage.jsp</location>
+  	</error-page>
+  	<error-page>
+  		<error-code>500</error-code>
+  		<location>/err/ServerErrorPage.jsp</location>
+  	</error-page>
+  	<error-page>
+  		<error-code>404</error-code>
+  		<location>/err/NotFoundErrorPage.jsp</location>
+  	</error-page>
+</web-app>

@@ -1,0 +1,15 @@
+use company;
+create table board(bno int(11) primary key auto_increment, btitle varchar(100) not null,bcontent varchar(500) not null,regday timestamp not null default now(),Author varchar(20) not null);
+select*from board;
+insert into board values(1,'게시글제목1','게시글 내용1','2021-01-01','작성자');
+insert into board values(2,'게시글제목2','게시글 내용2','2021-02-02','작성자2');
+insert into board values(3,'게시글제목3','게시글 내용3','2021-03-03','작성자3');
+insert into board values(4,'게시글제목4','게시글 내용4','2021-04-04','작성자4');
+insert into board values(5,'게시글제목5','게시글 내용5','2021-05-05','작성자5');
+insert into board values(6,'게시글제목6','게시글 내용6','2021-06-06','작성자6');
+insert into board values(7,'게시글제목7','게시글 내용7','2021-07-07','작성자7');
+insert into board values(8,'게시글제목8','게시글 내용8','2021-08-08','작성자8');
+insert into board values(9,'게시글제목9','게시글 내용9','2021-09-09','작성자9');
+insert into board values(10,'게시글제목10','게시글 내용10','2021-10-10','작성자10');
+insert into board values(11,'게시글제목11','게시글 내용11','2021-11-11','작성자11');
+commit;
