@@ -18,5 +18,16 @@ update board set title=?, content=?, regdate=sysdate,  id=? where seq=?;
 
 delete from board where seq=?;
 
+
+create table member (userid varchar2(20) primary key,
+userpw varchar2(300) not null,
+email varchar2(100) not null,
+tel varchar2(20) not null,
+address varchar2(100) not null,
+regdate date default sysdate,
+birth date,
+visited number default 0);
+
+select * from member;
 commit;
 

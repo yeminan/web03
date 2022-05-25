@@ -21,7 +21,10 @@ public class GetBoardCtrl extends HttpServlet {
         super();  
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+	throws ServletException, IOException {
+	
+		request.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		int num = Integer.parseInt(request.getParameter("num"));
 		BoardDAO dao = new BoardDAO();

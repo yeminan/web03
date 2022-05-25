@@ -3,48 +3,61 @@ package com.shop.common;
 import java.sql.Date;
 
 public class MemberVO {
-	private	int	seq;
-	private String title;
-	private String content; 
-	private Date regdate;
-	private String id;
-	private int visit;
-	
-	public int getSeq() {
-		return seq;
+	private String userid;
+	private String userpw;
+	private String email;
+	private String tel;
+	private String address;
+	private String regdate;
+	private String birth;
+	private int visited;
+	public String getUserid() {
+		return userid;
 	}
-	public void setSeq(int seq) {
-		this.seq = seq;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
-	public String getTitle() {
-		return title;
+	public String getUserpw() {
+		return userpw;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setUserpw(String userpw) {
+		this.userpw = userpw;
 	}
-	public String getContent() {
-		return content;
+	public String getEmail() {
+		return email;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public Date getRegdate() {
+	public String getTel() {
+		return tel;
+	}
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getRegdate() {
 		return regdate;
 	}
-	public void setRegdate(Date regdate) {
+	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	public String getId() {
-		return id;
+	public String getBirth() {
+		return birth;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setBirth(String birth) {
+		this.birth = birth;
 	}
-	public int getVisit() {
-		return visit;
+	public int getVisited() {
+		return visited;
 	}
-	public void setVisit(int visit) {
-		this.visit = visit;
-	} 
-
+	public void setVisited(int visited) {
+		this.visited = visited;
+	}
+	
 }

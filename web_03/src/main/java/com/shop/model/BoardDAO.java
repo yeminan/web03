@@ -117,7 +117,8 @@ public class BoardDAO {
 		public int addBoard(BoardVO vo) {
 			try {
 					conn = JDBCConnection.getConnection();
-					sql="insert into board values((select nvl(max(seq).0)+1 from board),?,?,sysdate,?, 0)";
+					sql="insert into board values((select nvl(max(seq).0)+1 from board)"
+							+ ",?,?,sysdate,?, 0)";
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1,vo.getTitle());
 					pstmt.setString(2,vo.getContent());
@@ -162,12 +163,12 @@ public class BoardDAO {
 			}
 			return cnt;
 		}
-		public int delBoard(BoardVO vo) {
+		public int delBoard(int num) {
 			try {
 					conn = JDBCConnection.getConnection();
 					sql="delete from board where seq=?";
 					pstmt = conn.prepareStatement(sql);
-					pstmt.setInt(1,vo.getSeq());
+					pstmt.setInt(1,num);
 					cnt = pstmt.executeUpdate();	
 			}catch(ClassNotFoundException e) {
 				System.out.println("드라이버 로딩이 실패되었습니다");

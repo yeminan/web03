@@ -19,13 +19,13 @@ public class GetBoardListCtrl extends HttpServlet {
     public GetBoardListCtrl() {
         super(); 
     }
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		
 		BoardDAO dao = new BoardDAO();
 		ArrayList<BoardVO> list = dao.getBoardList();
 		request.setAttribute("list", list);
 		RequestDispatcher view = request.getRequestDispatcher("./board/getBoardList.jsp");
 		view.forward(request, response);
-
 	}
-
 }

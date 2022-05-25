@@ -20,7 +20,8 @@ public class GetBoardSearchCtrl extends HttpServlet {
     public GetBoardSearchCtrl() {
         super(); 
     }
-    protected void doget(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+    		throws ServletException, IOException {
     	request.setCharacterEncoding("UTF-8");
 		String condition = request.getParameter("searchCondition");
 		String keyword = request.getParameter("searchKeyword");
