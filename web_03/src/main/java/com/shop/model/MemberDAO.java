@@ -228,6 +228,7 @@ public class MemberDAO {
 	
 			public ArrayList<MemberVO> JSONMemberList() {  //관리자 회원목록을 JSON으로 내보내기
 				ArrayList<MemberVO> list = null;
+				byte[] pwc;
 				try {
 					conn = JDBCConnection.getConnection();
 					sql = "select userid, userpw, email, tel, address, to_char(regdate, 'yyyy-MM-dd HH24:mi:ss') as cdate, visited from member";
@@ -237,7 +238,9 @@ public class MemberDAO {
 					while(rs.next()) {
 						MemberVO vo = new MemberVO();
 						vo.setUserid(rs.getString("userid"));
-						vo.setUserpw(rs.getString("userpw"));
+						pwc = Base64.getDecoder().decode(rs.getString("userpw"));
+						String pw =new String(pwc);
+						vo.setUserpw(pw);
 						vo.setEmail(rs.getString("email"));
 						vo.setTel(rs.getString("tel"));
 						vo.setAddress(rs.getString("address"));

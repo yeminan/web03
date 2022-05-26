@@ -20,10 +20,10 @@ import net.sf.json.JSONObject;
 public class MemberJSONCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
- 
     public MemberJSONCtrl() {
         super();
     }
+
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		MemberDAO dao = new MemberDAO();
@@ -34,7 +34,7 @@ public class MemberJSONCtrl extends HttpServlet {
 		JSONObject json = new JSONObject();
 		json.putAll(map);
 		out.println(json);
-
+		//	dao			ctrl		jsp
+		//vo -> list -> map -> json -> view
 	}
-
 }

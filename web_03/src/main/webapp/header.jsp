@@ -23,27 +23,16 @@
 
   <div id="gnb" class="navbar-menu">
     <div class="navbar-start">
-    	<div class="navbar-item has-dropdown is-hoverable">
+	      <div class="navbar-item has-dropdown is-hoverable">
 	      <a class="navbar-link">
-	       EVENT
+	      	ABOUTUS
 	      </a>
-	       <div class="navbar-dropdown">
-	    	<a class="navbar-item">
-	        Best100
-	      	</a>
-	        <a class="navbar-item">
-			Top10
-			</a>
-			<a class="navbar-item">
-			Top30
-			</a>
-			<a class="navbar-item">
-			Top50
-			</a>
-		   </div>
+	      <a class="navbar-link">
+	      	칫솔
+	      </a>
 		   <div class="navbar-item has-dropdown is-hoverable">
 	      <a class="navbar-link">
-	        팬츠
+	        치실
 	      </a>
 	       <div class="navbar-dropdown">
 	      <a class="navbar-item">
@@ -64,7 +53,7 @@
 		   </div>
 		   <div class="navbar-item has-dropdown is-hoverable">
 	      <a class="navbar-link">
-	       	아우터
+	       	치실
 	      </a>
 	       <div class="navbar-dropdown">
 	      <a class="navbar-item">
