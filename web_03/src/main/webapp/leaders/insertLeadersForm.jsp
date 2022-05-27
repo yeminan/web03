@@ -15,7 +15,7 @@
 <div id="content" class="content_wrap">
 	<section class="con_wrap">
 		<h2>제품등록</h2>
-		<form action="${path1 }/AddBoardCtrl" method="post">
+		<form action="${path1 }/AddLeadersCtrl" method="post">
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
@@ -40,7 +40,7 @@
 						<td colspan="2">
 							<input type="submit" value="글 등록" class="button is-info"/>
 							<input type="reset" value="취소" class="button is-info"/>
-							<a href="${path1 }/GetBoardListCtrl" class="button is-info">목록</a>
+							<a href="${path1 }/GetLeadersListCtrl" class="button is-info">목록</a>
 						</td>
 					</tr>
 				</tbody>

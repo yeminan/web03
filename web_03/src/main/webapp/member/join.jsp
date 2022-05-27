@@ -51,7 +51,7 @@
 					<tr>
 						<th>비밀번호 확인*</th>
 						<td>
-							<input type="password" name="userpw2" id="userpw2" required>
+							<input type="password" name="userpw" id="userpw" required>
 						</td>
 					</tr>
 					<tr>
@@ -70,9 +70,8 @@
 						<th>주소</th>
 						<td>
 							<input type="text" name="address" id="address"><br>
-							<input type="text" name="addr2" id="addr2" placeholder="상세주소 입력"><br>
 							<input type="text" name="postcode" id="postcode">
-							<input type="button" value="주소찾기" onclick="findAddr()" class="button is-info">
+							<input type="button" value="주소찾기" onclick="findAddress()" class="button is-info">
 						</td>
 					</tr>
 					<tr>

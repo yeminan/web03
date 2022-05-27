@@ -104,6 +104,7 @@ public class LeadersDAO {
 				rs=pstmt.executeQuery();
 				if(rs.next()) {
 					le.setLcode(rs.getInt("lcode"));
+					le.setLamount(rs.getInt("amount"));
 					le.setLprice(rs.getInt("lprice"));
 					le.setLcategory(rs.getString("lcategory"));
 					le.setLimg(rs.getString("limg"));

@@ -35,6 +35,7 @@ public class loginCtrl extends HttpServlet {
 		if(cnt>0) {
 			session.setAttribute("userid", userid);
 			session.setAttribute("name", "사용자");
+			response.sendRedirect("index.jsp");
 		} else {
 			response.sendRedirect("./member/login.jsp");
 		}

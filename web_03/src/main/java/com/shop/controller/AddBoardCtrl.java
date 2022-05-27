@@ -33,6 +33,7 @@ public class AddBoardCtrl extends HttpServlet {
 		vo.setId(id);
 		
 		BoardDAO dao = new BoardDAO();
+		
 		int cnt = dao.addBoard(vo);
 		if(cnt>0) {  
 			response.sendRedirect("GetBoardListCtrl");

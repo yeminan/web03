@@ -15,7 +15,7 @@
 <div id="content" class="content_wrap">
 	<section class="con_wrap">
 		<h2>상품정보 보기</h2>
-		<form action="${path1 }/AddBoardCtrl" method="post">
+		<form action="${path1 }/AddLeadersCtrl" method="post">
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>

@@ -25,7 +25,7 @@ public class GetBoardCtrl extends HttpServlet {
 	throws ServletException, IOException {
 	
 		request.setCharacterEncoding("UTF-8");
-		request.setCharacterEncoding("UTF-8");
+		
 		int num = Integer.parseInt(request.getParameter("num"));
 		BoardDAO dao = new BoardDAO();
 		BoardVO board = new BoardVO();

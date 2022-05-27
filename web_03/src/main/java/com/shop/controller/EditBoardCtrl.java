@@ -40,6 +40,6 @@ public class EditBoardCtrl extends HttpServlet {
 		} else {  
 			response.sendRedirect("GetBoardCtrl?num="+seq);
 		}	
+	
 	}
-
 }

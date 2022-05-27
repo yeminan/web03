@@ -30,6 +30,7 @@ public class IdCheckCtrl extends HttpServlet {
 			response.sendRedirect("join.jsp");
 		} else { 
 			application.setAttribute("msg", "yes");
+			application.setAttribute("useriid", userid);
 			response.sendRedirect("join.jsp?userid="+userid);
 		}
 	}

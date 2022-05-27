@@ -23,96 +23,62 @@
 
   <div id="gnb" class="navbar-menu">
     <div class="navbar-start">
-	      <div class="navbar-item has-dropdown is-hoverable">
-	      <a class="navbar-link">
-	      	ABOUTUS
-	      </a>
-	      <a class="navbar-link">
-	      	칫솔
-	      </a>
-		   <div class="navbar-item has-dropdown is-hoverable">
-	      <a class="navbar-link">
-	        치실
-	      </a>
-	       <div class="navbar-dropdown">
-	      <a class="navbar-item">
-	        슬렉스
-	      </a>
-	        <a class="navbar-item">
-			데님
-			</a>
-			<a class="navbar-item">
-			청바지
-			</a>
-			<a class="navbar-item">
-			반바지
-			</a>
-			<a class="navbar-item">
-			면바지
-			</a>
-		   </div>
-		   <div class="navbar-item has-dropdown is-hoverable">
-	      <a class="navbar-link">
-	       	치실
-	      </a>
-	       <div class="navbar-dropdown">
-	      <a class="navbar-item">
-	        자켓
-	      </a>
-	        <a class="navbar-item">
-			점퍼
-			</a>
-			<a class="navbar-item">
-			Best
-			</a>
-			<a class="navbar-item">
-			코트
-			</a>
-			<a class="navbar-item">
-			가디건
-			</a>
-		   </div>
-		   <div class="navbar-item has-dropdown is-hoverable">
+		      <div class="navbar-item has-dropdown is-hoverable">
+				        <a class="navbar-link">
+				         메뉴아이콘 삽입하기
+				        </a>
+				   <div class="navbar-dropdown">
+				          <a class="navbar-item" href="GetDiscountListCtrl">
+				            회사소개
+				          </a>
+				          <a class="navbar-item">
+				            자주묻는질문
+				          </a>
+				   </div>
+		      </div>
+	     	   <div class="navbar-item has-dropdown is-hoverable">
 		        <a class="navbar-link">
-		          제품안내
+		         ABOUTUS
 		        </a>
-		
 		   <div class="navbar-dropdown">
 		          <a class="navbar-item" href="GetDiscountListCtrl">
-		            상의
+		            회사소개
 		          </a>
 		          <a class="navbar-item">
-		            하의
+		            자주묻는질문
 		          </a>
-		          <a class="navbar-item">
-		            신발
-		          </a>
-		          <a class="navbar-item">
-		            악세서리
-		          </a>	        
 		   </div>
       </div>
-		        <div class="navbar-item has-dropdown is-hoverable">
-			        <a class="navbar-link">
-			         쇼핑몰 안내
-			        </a>
-		
-		        <div class="navbar-dropdown">
-		          <a class="navbar-item">
-		            오시는길
+		   <div class="navbar-item has-dropdown is-hoverable">
+		        <a class="navbar-link">
+		         칫솔
+		        </a>
+		   <div class="navbar-dropdown">
+		          <a class="navbar-item" href="GetDiscountListCtrl">
+		            성인
 		          </a>
 		          <a class="navbar-item">
-		            고객센터
+		            청소년
 		          </a>
 		          <a class="navbar-item">
-		            1:1문의
+		            어린이
 		          </a>
-		          <hr class="navbar-divider">
 		          <a class="navbar-item">
-		            쇼핑몰 찾아가기
+		            유아
 		          </a>
-		        </div>
-   			</div>
+		   </div>
+      </div>
+
+		 	   <div class="navbar-item has-dropdown is-hoverable">
+		        <a class="navbar-link">
+		        치간칫솔
+		        </a>
+	       	   <div class="navbar-item has-dropdown is-hoverable">
+		        <a class="navbar-link">
+		       틀니용품
+		        </a>
+		          <a class="navbar-item" href="GetDiscountListCtrl"></a>
+      				</div>
 			<div class="navbar-item has-dropdown is-hoverable">
 		        <a class="navbar-link">
 		          고객센터
