@@ -31,7 +31,7 @@
 					<option value="id">작성자</option>
 				</select>
 				<input type="text" name="searchKeyword"/>
-				<input type="submit" value="검색"/>
+				<input type="submit" value="검색" class="button is-info"/>
 			</td>
 		</tr>
 	</table>
@@ -60,7 +60,7 @@
 		</c:forEach>
 		<c:if test="${sid=='admin'}">
 		<tr>
-			<td colspan="6"><a href="${path1 }/board/addBoardForm.jsp" class="button is-info">글 등록</a></td>
+			<td colspan="6"><a href="${path1 }/board/addBoardForm.jsp" class="button is-info">글등록</a></td>
 		</tr>
 		</c:if>
 		</tbody>

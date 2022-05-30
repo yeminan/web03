@@ -1,6 +1,5 @@
 package com.shop.common;
 
-import java.util.Date;
 
 public class MemberVO {
 	private String userid;

@@ -8,11 +8,10 @@
 %> 
 <header id="header" class="panel-heading">
 	<div class="hd_wrap">
-
 	<nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="${path }/index.jsp" id="logo">
-     <img src="${path }/image_readtop_.jpg" width="500" height="350">
+     <img src="${path }/img/leaderslogo.PNG" width="220" height="37">
     </a>
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
@@ -20,12 +19,13 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
+  </nav>
 
   <div id="gnb" class="navbar-menu">
     <div class="navbar-start">
 		      <div class="navbar-item has-dropdown is-hoverable">
 				        <a class="navbar-link">
-				         메뉴아이콘 삽입하기
+				         Leaders
 				        </a>
 				   <div class="navbar-dropdown">
 				          <a class="navbar-item" href="GetDiscountListCtrl">
@@ -153,9 +153,13 @@
 		         <a href="${path }/GetMemberListCtrl" class="button is-light">
 		            회원관리
 		          </a>
-		          <a class="button is-light">
+		          <a href="${path }/GetLeadersListCtrl" class="button is-light">
 		            제품관리
+		            </a>
+		            <a href="${path }/AccessListCtrl" class="button is-light">
+		            접속자관리
 		          </a>
+		          
 		          <a class="button is-light">
 		            판매관리
 		          </a>
@@ -166,7 +170,5 @@
 		      </div>
 		      </c:if>
 		    </div>
-		  </div>
-		</nav>
-	</div>
+	
 </header>

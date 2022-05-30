@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path1" value="${pageContext.request.contextPath }" /> 
 <%
-	String uid = "";
-	if(uid != null) uid = (String) application.getAttribute("uid");
+	String userid = "";
+	if(userid != null) userid = (String) application.getAttribute("userid");
 %>
 <!DOCTYPE html>
 <html>
@@ -71,7 +71,7 @@
 						<td>
 							<input type="text" name="address" id="address"><br>
 							<input type="text" name="postcode" id="postcode">
-							<input type="button" value="주소찾기" onclick="findAddress()" class="button is-info">
+							<input type="button" value="주소찾기" onclick="findAddr()" class="button is-info">
 						</td>
 					</tr>
 					<tr>
@@ -93,14 +93,14 @@
 		<script>
 		function idCheck() {
 			
-			var userid = document.join_form.userid.value;
+			var uid = document.join_form.userid.value;
 			
 			if(userid==""){
 				alert("아이디가 입력되지 않았습니다. 아이디를 입력 후 진행하시기 바랍니다.");
 				
 				return false;
 			} else {
-				location.href="${path1 }/IdCheckCtrl?userid="+userid;
+				location.href="${path1 }/IdCheckCtrl?userid="+uid;
 			}
 		}
 		</script>	
@@ -117,17 +117,17 @@
 		}
 		</script>
 		<script>
-		function findAddress() {
+		function findAddr() {
 			new daum.Postcode({
 				oncomplete: function(data) {
 					console.log(data);
-					var roadAddress = data.roadAddress;
-					var jibunAddress = data.jibunAddress;
+					var roadAddr= data.roadAddress;
+					var jibunAddr = data.jibunAddress;
 					document.getElementById("postcode").value = data.zonecode;
-					if(roadAddress !== '') {
-						document.getElementById("address").value = roadAddress;				
-					} else if(jibunAddress !== ''){
-						document.getElementById("address").value = jibunAddress;
+					if(roadAddr !== '') {
+						document.getElementById("address").value = roadAddr;				
+					} else if(jibunAddr !== ''){
+						document.getElementById("address").value = jibunAddr;
 					}
 				}
 			}).open();

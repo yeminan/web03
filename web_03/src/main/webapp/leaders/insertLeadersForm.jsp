@@ -31,14 +31,39 @@
 						</td>
 					</tr>
 					<tr>
+						<th>내용5</th>
+						<td>
+							<textarea cols="100" rows ="7" name="content" required></textarea>
+						</td>
+					</tr>
+						<tr>
 						<th>내용</th>
 						<td>
 							<textarea cols="100" rows ="7" name="content" required></textarea>
 						</td>
 					</tr>
+						<tr>
+						<th>내용4</th>
+						<td>
+							<textarea cols="100" rows ="7" name="content" required></textarea>
+						</td>
+					</tr>
+						<tr>
+						<th>내용3</th>
+						<td>
+							<textarea cols="100" rows ="7" name="content" required></textarea>
+						</td>
+					</tr>
+						<tr>
+						<th>내용2</th>
+						<td>
+							<textarea cols="100" rows ="7" name="content" required></textarea>
+						</td>
+					</tr>
+					
 					<tr>
 						<td colspan="2">
-							<input type="submit" value="글 등록" class="button is-info"/>
+							<input type="submit"  value="글 등록" class="button is-info"/>
 							<input type="reset" value="취소" class="button is-info"/>
 							<a href="${path1 }/GetLeadersListCtrl" class="button is-info">목록</a>
 						</td>

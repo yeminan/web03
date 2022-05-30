@@ -19,6 +19,8 @@ public class EditLeadersCtrl extends HttpServlet {
     }
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		int lcode=Integer.parseInt(request.getParameter("lcode"));
 		int lmount= Integer.parseInt(request.getParameter("lmount"));
 		

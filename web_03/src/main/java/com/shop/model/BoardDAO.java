@@ -52,7 +52,7 @@ public class BoardDAO {
 			BoardVO vo = new BoardVO();
 			try {
 				conn = JDBCConnection.getConnection();
-				sql="selec * from board where seq=?";
+				sql="select * from board where seq=?";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setInt(1, seq);
 				rs =pstmt.executeQuery();

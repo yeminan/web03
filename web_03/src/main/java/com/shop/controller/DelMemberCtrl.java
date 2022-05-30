@@ -21,10 +21,10 @@ public class DelMemberCtrl extends HttpServlet {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String uid = request.getParameter("uid");
+		String userid = request.getParameter("userid");
 		HttpSession session = request.getSession();
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.delMember(uid);
+		int cnt = dao.delMember(userid);
 		if(cnt>0) {  //회원탈퇴 성공
 			session.invalidate();
 			response.sendRedirect("index.jsp");

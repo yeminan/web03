@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.shop.common.LeadersVO;
 import com.shop.model.LeadersDAO;
 
-@WebServlet("/InsertLeadersCtrl")
+@WebServlet("/AddLeadersCtrl")
 public class AddLeadersCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public AddLeadersCtrl() {
@@ -19,13 +19,16 @@ public class AddLeadersCtrl extends HttpServlet {
     }
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		int lcode=Integer.parseInt(request.getParameter("lcode"));
 		int lamount = Integer.parseInt(request.getParameter("lamount"));
 		int lprice =Integer.parseInt(request.getParameter("lprice"));
-		String lcategory = (request.getParameter("lcategory"));
-		String lcontent=(request.getParameter("lcontent"));
-		String limg=(request.getParameter("limg"));
+		String lcategory = request.getParameter("lcategory");
+		String lcontent=request.getParameter("lcontent");
+		String limg=request.getParameter("limg");
 		int ldelivery=Integer.parseInt(request.getParameter("ldelivery"));
+		
 		LeadersVO vo =new LeadersVO();
 		vo.setLcode(lcode);
 		vo.setLamount(lamount);

@@ -20,6 +20,9 @@ public class GetLeadersListCtrl extends HttpServlet {
         super();
     }
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		LeadersDAO le= new LeadersDAO();
 		ArrayList<LeadersVO> list = le.getLeadersList();
 		request.setAttribute("list",list);

@@ -22,6 +22,8 @@ public class DelLeadersCtrl extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		int lcode = Integer.parseInt(request.getParameter("lcode")); 
 		LeadersDAO li = new LeadersDAO();		
 		int cnt = li.delLeaders(lcode); 

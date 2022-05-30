@@ -53,19 +53,23 @@ public class LeadersDAO {
 			
 			try {
 				conn=JDBCConnection.getConnection();
-				sql="insert into leaders values(?,?,?) ";
+				sql="insert into leaders values(?,?,?,?,?,?,?) ";
 				pstmt=conn.prepareStatement(sql);
-				pstmt.setInt(1,le.getLprice());
+				pstmt.setInt(1,le.getLcode());
 				pstmt.setInt(2,le.getLamount());
-				pstmt.setString(3,le.getLcontent());
-				pstmt.setInt(4,le.getLdelivery());
+				pstmt.setInt(3,le.getLprice());
+				pstmt.setString(4, le.getLcategory());
+				pstmt.setString(5,le.getLimg());
+				pstmt.setString(6,le.getLcontent());
+				pstmt.setInt(7,le.getLdelivery());
+				
 				cnt=pstmt.executeUpdate();
 			}catch(ClassNotFoundException e) {
-				
+				e.printStackTrace();
 			}catch(SQLException e) {
-				
+				e.printStackTrace();
 			}catch(Exception e) {
-				
+				e.printStackTrace();
 			}finally{
 				JDBCConnection.close(pstmt, conn);
 			}
@@ -75,11 +79,17 @@ public class LeadersDAO {
 		public int editLeadersVO (LeadersVO le) {
 			try {
 			conn=JDBCConnection.getConnection();
-			sql="update leaders set lcode=?,lamount=?,lpric=?,lcontent=? ";
+			sql="update leaders set lamount=?,lprice=?,lcategory=?,limg=?,lcontent=?,ldelivery=? where lcode=?";
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1,le.getLcategory());
-			pstmt.setString(2,le.getLimg());
-			pstmt.setInt(3,le.getLprice());
+			pstmt.setInt(1, le.getLamount());
+			pstmt.setInt(2,le.getLprice());
+			pstmt.setString(3,le.getLcategory());
+			pstmt.setString(4,le.getLimg());
+			pstmt.setString(5,le.getLcontent());
+			pstmt.setInt(6,le.getLdelivery());
+			pstmt.setInt(7,le.getLcode());
+		
+			pstmt.setInt(4,le.getLdelivery());
 			cnt=pstmt.executeUpdate();
 			}catch(ClassNotFoundException e) {
 				e.printStackTrace();
@@ -104,7 +114,7 @@ public class LeadersDAO {
 				rs=pstmt.executeQuery();
 				if(rs.next()) {
 					le.setLcode(rs.getInt("lcode"));
-					le.setLamount(rs.getInt("amount"));
+					le.setLamount(rs.getInt("lamount"));
 					le.setLprice(rs.getInt("lprice"));
 					le.setLcategory(rs.getString("lcategory"));
 					le.setLimg(rs.getString("limg"));

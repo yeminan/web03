@@ -27,11 +27,11 @@ public class IdCheckCtrl extends HttpServlet {
 		application = getServletContext();
 		if(cnt>0) {
 			application.setAttribute("msg", "no");
-			response.sendRedirect("join.jsp");
+			response.sendRedirect("./member/join.jsp");
 		} else { 
 			application.setAttribute("msg", "yes");
-			application.setAttribute("useriid", userid);
-			response.sendRedirect("join.jsp?userid="+userid);
+			application.setAttribute("userid", userid);
+			response.sendRedirect("./member/join.jsp");
 		}
 	}
 }

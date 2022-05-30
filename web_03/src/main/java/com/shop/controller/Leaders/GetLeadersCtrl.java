@@ -21,7 +21,9 @@ public class GetLeadersCtrl extends HttpServlet {
     }
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		int lcode = Integer.parseInt(request.getParameter("lcode"));
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		int lcode = Integer.parseInt(request.getParameter("num"));
 		LeadersDAO le = new LeadersDAO();
 		LeadersVO leaders = new LeadersVO();
 		leaders = le.getLeaders(lcode);

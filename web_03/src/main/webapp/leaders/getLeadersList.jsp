@@ -15,13 +15,64 @@
 <div id="content" class="content_wrap">
 	<section class="con_wrap">
 		<h2>상품목록</h2>
-		<form action="${path1 }/AddLeadersCtrl" method="post">
-			<table class="table" id="lst_tb">
+		<form action="${path1 }/AddLeadersListCtrl" method="post">
+			<table class="table" id="search_tb">
 				<tbody>
+					<tr>
+			<td>
+				<select name="searchCondition">
+					<option value="lcode">상품코드</option>
+					<option value="lcontent">상품내용</option>
+					<option value="lcategory">상품카테고리</option>
+				</select>
+				<input type="text" name="searchKeyword"/>
+				<input type="submit" value="검색" class="button is-info"/>
+			</td>
+		</tr>
+		</table>
+		</form>
+		
+		<table class="table" id="lst_tb">
+		<thead>
+			<tr>
+				<th class="item1">상품코드</th>
+				<th class="item2">상품가격</th>
+				<th class="item3">상품카테고리</th>
+				<th class="item4">배송료</th>
+			</tr>
+		</thead>
+		<tbody>
+		<c:forEach items="${list }" var="vo" varStatus="status">
+			<tr>
+				<td>${vo.lcode }</td>
+				<td><a href="${path1 }/GetLeadersCtrl?num=${vo.lcode }">${vo.lprice }</a></td>
+				<td>${vo.lcategory }</td>
+				<td>${vo.ldelivery }</td>
+			</tr>
+		</c:forEach>
+		<c:if test="${sid=='admin'}">
+		<tr>
+			<td colspan="6"><a href="${path1 }/board/addBoardForm.jsp" class="button is-info">글등록</a></td>
+		</tr>
+		</c:if>
+		</tbody>
+	</table>
+</section>	
+<script>
+$(document).ready(function(){
+	$("#lst_tb_filter").css("display"."none");
+});
+</script>
+</div>
+
+<jsp:include page="../footer.jsp"></jsp:include>
+</body>
+</html>
+	<%-- 
 					<tr>
 						<th>상품코드</th>
 						<td>
-							<input type="text" name="title" value="a123코드" readonly>
+							<input type="text" name="lcode" value="1" readonly>
 						</td>
 					</tr>
 					<tr>
@@ -46,27 +97,33 @@
 					<tr>
 						<th>상품이미지</th>
 						<td>
-							<input type= "text" name="lcode" value="어린이1회용칫솔" readonly>
-							<input type="image" src="${path1 }/leaderssill.png" >
+							<input type= "text" name="limg" value="어린이용치실" readonly>
+							<input type="image" src="${path1 }/img/leaderssill.jpg" >
 						</td>
 					</tr>
 					<tr>
 						<th>상품 내용</th>
 						<td>
-							<textarea cols="100" rows ="7" name="content" required></textarea>	
+							<textarea cols="100" rows ="7" name="lcontent" required></textarea>	
 						</td>
 					</tr>
 					<tr>
 						<th>가격</th>
 						<td>
-							<input type="text" value="1500원"name="lprice" readonly>
+							<input type="text" value="2500"name="lprice" readonly>
+						</td>
+					</tr>
+					<tr>
+						<th>배송료</th>
+						<td>
+							<input type="text" value="2000"name="ldelivery" readonly>
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2">
 							<input type="submit" value="상품등록" class="button is-info"/>
 							<input type="reset" value="상품등록 취소" class="button is-info"/>
-							<a href="${path1 }/GetLeadersListCtrl" class="button is-info">상품목록</a>
+							<a href="${path1 }/GetBoardListCtrl" class="button is-info">상품목록</a>
 						</td>
 					</tr>
 				</tbody>
@@ -81,4 +138,4 @@
 </div>
 <jsp:include page="../footer.jsp"></jsp:include>
 </body>
-</html>
+</html> --%>

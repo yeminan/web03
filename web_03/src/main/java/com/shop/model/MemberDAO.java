@@ -21,16 +21,14 @@ public class MemberDAO {
 			String pw = Base64.getEncoder().encodeToString(vo.getUserpw().getBytes());
 			try {
 				conn = JDBCConnection.getConnection();
-				sql = "insert into member values(?,?,?,?,?, sysdate, 0)";
+				sql = "insert into member values(?,?,?,?,?,?, sysdate, 0)";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, vo.getUserid());
 				pstmt.setString(2, pw);
 				pstmt.setString(3, vo.getEmail());
 				pstmt.setString(4, vo.getTel());
 				pstmt.setString(5, vo.getAddress());
-				pstmt.setString(6, vo.getRegdate());
-				pstmt.setString(7, vo.getBirth());
-				pstmt.setInt(8, vo.getVisited());
+				pstmt.setString(6, vo.getBirth());
 				cnt = pstmt.executeUpdate();
 			} catch(ClassNotFoundException e) {
 				System.out.println("드라이버 로딩이 실패되었습니다.");
@@ -197,7 +195,7 @@ public class MemberDAO {
 			MemberVO member = new MemberVO();
 			try {
 				conn = JDBCConnection.getConnection();
-				sql = "select * from board where seq=?";
+				sql = "select * from member where userid=?";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, uid);
 				rs = pstmt.executeQuery();

@@ -18,6 +18,7 @@ update board set title=?, content=?, regdate=sysdate,  id=? where seq=?;
 
 delete from board where seq=?;
 
+select * from board;
 
 create table member (userid varchar2(20) primary key,
 userpw varchar2(300) not null,
@@ -52,4 +53,20 @@ insert into leaders values(1,10,1500,'칫솔','img/leaderssill.png','어린이�
 insert into leaders values(2,10,2000,'치실','img/leaderssill.png','어린이일회용 치실','2000');
 insert into leaders values(3,10,3000,'치간칫솔','img/leaderssill.png','치간칫솔 가정용','2500');
 insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
+
+CREATE TABLE db_access (
+  no number primary key,
+  request_uri varchar(100),
+  query_string varchar(200),
+  remote_address varchar(30),
+  server_name varchar(60),
+  server_port varchar(10),
+  locale varchar(20),
+  browser varchar(200),
+  referer varchar(255),
+  session_id varchar(80),
+  user_id varchar(20),
+  response_time number,
+  reg_date date default sysdate
+);
 

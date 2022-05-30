@@ -21,8 +21,7 @@ public class loginCtrl extends HttpServlet {
         super();
     }
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String userid = request.getParameter("userid");
 		String userpw = request.getParameter("userpw");
@@ -33,7 +32,7 @@ public class loginCtrl extends HttpServlet {
 		int cnt = dao.login(vo);
 		HttpSession session = request.getSession();
 		if(cnt>0) {
-			session.setAttribute("userid", userid);
+			session.setAttribute("sid", userid);
 			session.setAttribute("name", "사용자");
 			response.sendRedirect("index.jsp");
 		} else {
