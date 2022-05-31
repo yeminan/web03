@@ -48,13 +48,13 @@
 		            자주묻는질문
 		          </a>
 		   </div>
-      </div>
-		   <div class="navbar-item has-dropdown is-hoverable">
-		        <a class="navbar-link">
+	      </div>
+			   <div class="navbar-item has-dropdown is-hoverable">
+			        <a class="navbar-link">
 		         칫솔
 		        </a>
 		   <div class="navbar-dropdown">
-		          <a class="navbar-item" href="GetDiscountListCtrl">
+		          <a class="navbar-item" href="GetLeadersListCtrl">
 		            성인
 		          </a>
 		          <a class="navbar-item">
@@ -66,19 +66,21 @@
 		          <a class="navbar-item">
 		            유아
 		          </a>
-		   </div>
-      </div>
+			   </div>
+	      </div>
 
 		 	   <div class="navbar-item has-dropdown is-hoverable">
 		        <a class="navbar-link">
 		        치간칫솔
 		        </a>
+		        </div>
 	       	   <div class="navbar-item has-dropdown is-hoverable">
 		        <a class="navbar-link">
 		       틀니용품
 		        </a>
 		          <a class="navbar-item" href="GetDiscountListCtrl"></a>
       				</div>
+      				
 			<div class="navbar-item has-dropdown is-hoverable">
 		        <a class="navbar-link">
 		          고객센터
@@ -103,7 +105,8 @@
 		          <a class="navbar-item">
 		            환불안내
 		          </a>
-		     </div>
+		          </div>
+		     
 	</div>
 	</div>
 	</div>
@@ -133,6 +136,9 @@
 	          <a href="${path }/myPageCtrl?userid=${sid }" class="button is-primary">
 	            <strong>회원정보수정</strong>
 	          </a>
+	           <a href="${path }/GetBasketListCtrl" class="button is-light">
+	            장바구니
+	          </a>
 	          <a href="" class="button is-light">
 	            마이페이지
 	          </a>
@@ -153,22 +159,20 @@
 		         <a href="${path }/GetMemberListCtrl" class="button is-light">
 		            회원관리
 		          </a>
+		             <a href="${path }/adminGetMemberListCtrl" class="button is-light">
+		            회원관리2
+		          </a>
 		          <a href="${path }/GetLeadersListCtrl" class="button is-light">
 		            제품관리
 		            </a>
 		            <a href="${path }/AccessListCtrl" class="button is-light">
 		            접속자관리
 		          </a>
-		          
-		          <a class="button is-light">
-		            판매관리
-		          </a>
-		          <a class="button is-light">
-		            로그아웃
-		          </a>
 		        </div>
 		      </div>
+		      
 		      </c:if>
-		    </div>
+		  
+		  
 	
 </header>

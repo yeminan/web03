@@ -19,45 +19,52 @@
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
-						<th>제목</th>
+						<th>상품코드</th>
 						<td>
-							<input type="text" name="title" value="" required>
+						<c:if test="${sid=='admin' }">
+							<input type="text" name="lcode" value="${leaders.lcode }">
+						</c:if>
+						<c:if test="${sid!='admin' }">
+							<p>${leaders.lcode }</p>
+						</c:if>
+							<input type="hidden" name="lcode" value="${leaders.lcode }">
 						</td>
 					</tr>
 					<tr>
-						<th>작성자</th>
+						<th>상품수량</th>
 						<td>
-							<input type="text" name="nickname" value="admin">
+						<input type="number" name="lamount" min="1" max="20" step="1"><br>
 						</td>
 					</tr>
 					<tr>
-						<th>내용5</th>
+						<th>상품카테고리</th>
 						<td>
-							<textarea cols="100" rows ="7" name="content" required></textarea>
+							<input type= "text" name="lcategory" value="칫솔" >
 						</td>
 					</tr>
-						<tr>
-						<th>내용</th>
+					<tr>
+						<th>상품이미지</th>
 						<td>
-							<textarea cols="100" rows ="7" name="content" required></textarea>
+							<input type= "text" name="limg" value="어린이이중 슬림모" >
+							<input type="image" src="${path1 }/img/brush.jpg" >
 						</td>
 					</tr>
-						<tr>
-						<th>내용4</th>
+					<tr>
+						<th>상품 내용</th>
 						<td>
-							<textarea cols="100" rows ="7" name="content" required></textarea>
+							<textarea cols="100" rows ="7" name="lcontent" required>저희 리더스는 2009년에 설립된 치과 구가용품 전문 브랜드 입니다 전국 보건소,치과전용 구강위생용품을 수년간 납품해온 업체로 맛있는 칫솔로 건강한 치아를 지켜드립니다</textarea>	
 						</td>
 					</tr>
-						<tr>
-						<th>내용3</th>
+					<tr>
+						<th>가격</th>
 						<td>
-							<textarea cols="100" rows ="7" name="content" required></textarea>
+							<input type="text" value="1500"name="lprice">
 						</td>
 					</tr>
-						<tr>
-						<th>내용2</th>
+					<tr>
+						<th>배송료</th>
 						<td>
-							<textarea cols="100" rows ="7" name="content" required></textarea>
+							<input type="text" value="2000"name="ldelivery" >
 						</td>
 					</tr>
 					

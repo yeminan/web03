@@ -21,7 +21,7 @@ $(document).ready( function () {
 .con_wrap { width:1280px; margin:0 auto; } 
 .frm_fr { width:800px; }
 #logo img { display:block; width:200px; height:30px; min-height:30px; max-height:30px; }
-#gnb .navbar-link { font-size:18px; }
+#gnb .navbar-link {font-size:18px; }
 .page_tit { font-size:40px; text-align:center; line-height:2em; padding:1em; }
 
 #form_table { width:800px; margin:20px auto; }

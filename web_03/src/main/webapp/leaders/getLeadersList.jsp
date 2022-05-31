@@ -15,7 +15,7 @@
 <div id="content" class="content_wrap">
 	<section class="con_wrap">
 		<h2>상품목록</h2>
-		<form action="${path1 }/AddLeadersListCtrl" method="post">
+		<form action="${path1 }/GetLeadersCtrl" method="post">
 			<table class="table" id="search_tb">
 				<tbody>
 					<tr>
@@ -31,111 +31,41 @@
 		</tr>
 		</table>
 		</form>
-		
-		<table class="table" id="lst_tb">
-		<thead>
-			<tr>
-				<th class="item1">상품코드</th>
-				<th class="item2">상품가격</th>
-				<th class="item3">상품카테고리</th>
-				<th class="item4">배송료</th>
-			</tr>
-		</thead>
-		<tbody>
-		<c:forEach items="${list }" var="vo" varStatus="status">
-			<tr>
-				<td>${vo.lcode }</td>
-				<td><a href="${path1 }/GetLeadersCtrl?num=${vo.lcode }">${vo.lprice }</a></td>
-				<td>${vo.lcategory }</td>
-				<td>${vo.ldelivery }</td>
-			</tr>
-		</c:forEach>
+		<ul class="pro_lst" id="lst_tb2">
+			<c:forEach items="${list }" var="vo" varStatus="status">
+				<li>
+					<div class="img_fr">
+						<img src="${path1 }/upload/${vo.limg }" alt="${vo.lamount }">
+					</div>
+					<div class="hidden item1">${status.count }</div>
+					<h3 class="item_tit"><a href="${path1 }/GetLeadersCtrl?lcode=${vo.lcode }">${vo.lamount }</a></h3>
+					<p class="item_com">${vo.lprice }</p>
+					<p class="item_data">
+						<span>카테고리: ${vo.lcategory }</span>
+						<p>
+						<span>이미지 : ${vo.limg }</span><br>
+						<p>
+						<span>내용 : ${vo.lcontent }</span>
+						<p>
+						<span>남은 수량 : ${vo.lamount }</span>
+						</p>
+				</li>
+	
+			</c:forEach>
+			<c:if test="${vo==null }">
+				<li class="nothing">더 이상 상품이 존재하지 않습니다.</li>
+			</c:if>
+		</ul>
+
 		<c:if test="${sid=='admin'}">
-		<tr>
-			<td colspan="6"><a href="${path1 }/board/addBoardForm.jsp" class="button is-info">글등록</a></td>
-		</tr>
+		<div id ="btn_group">
+			<a href="${path1 }/insertLeadersForm.jsp" class="button is-info">상품등록</a>
+		</div>
 		</c:if>
-		</tbody>
-	</table>
 </section>	
-<script>
-$(document).ready(function(){
-	$("#lst_tb_filter").css("display"."none");
-});
-</script>
 </div>
 
 <jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
-	<%-- 
-					<tr>
-						<th>상품코드</th>
-						<td>
-							<input type="text" name="lcode" value="1" readonly>
-						</td>
-					</tr>
-					<tr>
-						<th>상품수량</th>
-						<td>
-						<input type="number" name="lamount" min="1" max="20" step="1"><br>
-						</td>
-					</tr>
-					<tr>
-						<th>상품카테고리</th>
-						<td>
-						<input type="button" value="칫솔"   	name="lcategory"><br>
-						<input type="button" value="치실" 	name="lcategory"><br>
-						<input type="button" value="치간칫솔" 	name="lcategory"><br>
-						<input type="button" value="틀니" 	name="lcategory"><br>
-						<input type="button" value="세트용품" 	name="lcategory"><br>
-						<input type="button" value="구강위생용품" 	name="lcategory"><br>
-						<input type="button" value="생활용품" 	name="lcategory"><br>
-		
-						</td>
-					</tr>
-					<tr>
-						<th>상품이미지</th>
-						<td>
-							<input type= "text" name="limg" value="어린이용치실" readonly>
-							<input type="image" src="${path1 }/img/leaderssill.jpg" >
-						</td>
-					</tr>
-					<tr>
-						<th>상품 내용</th>
-						<td>
-							<textarea cols="100" rows ="7" name="lcontent" required></textarea>	
-						</td>
-					</tr>
-					<tr>
-						<th>가격</th>
-						<td>
-							<input type="text" value="2500"name="lprice" readonly>
-						</td>
-					</tr>
-					<tr>
-						<th>배송료</th>
-						<td>
-							<input type="text" value="2000"name="ldelivery" readonly>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<input type="submit" value="상품등록" class="button is-info"/>
-							<input type="reset" value="상품등록 취소" class="button is-info"/>
-							<a href="${path1 }/GetBoardListCtrl" class="button is-info">상품목록</a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</form>	
-	</section>
-	<script>
-	$(document).ready(function(){
-		$("#lst_tb_filter").css("display","none");
-	});
-	</script>	
-</div>
-<jsp:include page="../footer.jsp"></jsp:include>
-</body>
-</html> --%>
+	

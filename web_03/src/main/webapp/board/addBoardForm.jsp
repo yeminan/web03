@@ -19,23 +19,48 @@
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
-						<th>제목</th>
+					<th>상품코드</th>
 						<td>
 							<input type="text" name="title" value="" required>
 						</td>
 					</tr>
 					<tr>
-						<th>작성자</th>
+					<th>상품가격</th>
 						<td>
 							<input type="text" name="nickname" value="admin">
 						</td>
 					</tr>
 					<tr>
-						<th>내용</th>
+					<th>상품카테고리</th>
 						<td>
-							<textarea cols="100" rows ="7" name="content" required></textarea>
+							<input type="text" name="nickname" value="admin">
 						</td>
 					</tr>
+					<tr>
+						<th>상품이미지</th>
+						<td>
+							<input type="text" name="nickname" value="admin">
+						</td>
+					</tr>
+					<tr>
+						<th>상품내용</th>
+						<td>
+							<input type="text" name="nickname" value="admin">
+						</td>
+					</tr>
+					<tr>
+						<th>상품가격</th>
+						<td>
+							<input type="text" name="nickname" value="admin">
+						</td>
+					</tr>
+					<tr>
+						<th>상품배송료</th>
+						<td>
+							<input type="text" name="nickname" value="admin">
+						</td>
+					</tr>
+					
 					<tr>
 						<td colspan="2">
 							<input type="submit" value="글 등록" class="button is-info"/>

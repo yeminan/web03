@@ -48,10 +48,19 @@ limg varchar2(500),
 lcontent varchar(3000),
 ldelivery number);
 
+
 select * from leaders;
 insert into leaders values(1,10,1500,'칫솔','img/leaderssill.png','어린이일회용 칫솔','2000');
 insert into leaders values(2,10,2000,'치실','img/leaderssill.png','어린이일회용 치실','2000');
 insert into leaders values(3,10,3000,'치간칫솔','img/leaderssill.png','치간칫솔 가정용','2500');
+insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
+insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
+insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
+insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
+insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
+insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
+insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
+insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
 insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
 
 CREATE TABLE db_access (
@@ -70,3 +79,41 @@ CREATE TABLE db_access (
   reg_date date default sysdate
 );
 
+
+create table basket(bno number primary key, -- 장바구니번호
+userid varchar2(20),    -- 사용자아이디
+gno number,             -- 상품코드
+gcolor varchar2(40),    -- 색상
+amount number,          -- 수량
+gsize varchar2(40),     -- 크기
+bdate Date);            -- 장바구니 담긴 날짜
+
+select * from BASKET;
+insert into basket values ((select nvl(max(bno), 0)+1 from basket), ?, ?, ?, ?, ?, sysdate);
+
+--장바구니 정보 변경
+update BASKET set gno=?, gcolor=?, amount=?, gisze=?, bdate=sysdate where bno;
+
+--결제테이블
+create table payment(ono number primary key, -- 결제번호
+    paytype varchar2(20),   -- 결제방식
+    payno varchar2(30),     -- 결제카드번호
+    money number,           -- 결제금액
+    sdate date,             -- 결제일
+    gno number,             -- 상품코드
+    amount number,          -- 수량
+    userid varchar2(20),    -- 사용자아이디
+	rname varchar2(30),     -- 수신자명
+    tel varchar2(20),       -- 수신자전화번호
+    addr1 varchar2(200),    -- 수신자 기본주소
+    addr2 varchar2(100),    -- 수신자 상세주소
+    postcode varchar2(10),  -- 수신자 우편번호
+    transno varchar2(50),   -- 배송코드
+    transco varchar2(50),   -- 배송회사
+    rstatus varchar2(20),   -- 수신상태
+    rdate date,             -- 도착일
+	memo varchar2(100)     -- 메모
+);
+
+--결제테이블
+select * from payment;
