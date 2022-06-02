@@ -19,19 +19,19 @@
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
-					<th>상품코드</th>
+					<th>글제목</th>
 						<td>
 							<input type="text" name="title" value="" required>
 						</td>
 					</tr>
 					<tr>
-					<th>상품가격</th>
+					<th>작성자</th>
 						<td>
 							<input type="text" name="nickname" value="admin">
 						</td>
 					</tr>
 					<tr>
-					<th>상품카테고리</th>
+					<th>내용</th>
 						<td>
 							<input type="text" name="nickname" value="admin">
 						</td>

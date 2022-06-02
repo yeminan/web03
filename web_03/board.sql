@@ -41,6 +41,7 @@ commit;
 
 create table leaders(
 lcode number primary key,
+ltitle varchar2(100),
 lamount number,
 lprice number,
 lcategory varchar2(50),
@@ -48,8 +49,8 @@ limg varchar2(500),
 lcontent varchar(3000),
 ldelivery number);
 
-
 select * from leaders;
+
 insert into leaders values(1,10,1500,'칫솔','img/leaderssill.png','어린이일회용 칫솔','2000');
 insert into leaders values(2,10,2000,'치실','img/leaderssill.png','어린이일회용 치실','2000');
 insert into leaders values(3,10,3000,'치간칫솔','img/leaderssill.png','치간칫솔 가정용','2500');

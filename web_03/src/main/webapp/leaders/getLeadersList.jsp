@@ -15,12 +15,13 @@
 <div id="content" class="content_wrap">
 	<section class="con_wrap">
 		<h2>상품목록</h2>
-		<form action="${path1 }/GetLeadersCtrl" method="post">
+		<form action="${path1 }/GetLeadersListCtrl" method="post">
 			<table class="table" id="search_tb">
 				<tbody>
 					<tr>
 			<td>
 				<select name="searchCondition">
+					<option value="title">상품제목</option>
 					<option value="lcode">상품코드</option>
 					<option value="lcontent">상품내용</option>
 					<option value="lcategory">상품카테고리</option>
@@ -39,6 +40,7 @@
 					</div>
 					<div class="hidden item1">${status.count }</div>
 					<h3 class="item_tit"><a href="${path1 }/GetLeadersCtrl?lcode=${vo.lcode }">${vo.lamount }</a></h3>
+					
 					<p class="item_com">${vo.lprice }</p>
 					<p class="item_data">
 						<span>카테고리: ${vo.lcategory }</span>
@@ -48,6 +50,8 @@
 						<span>내용 : ${vo.lcontent }</span>
 						<p>
 						<span>남은 수량 : ${vo.lamount }</span>
+						<p>
+						<span>배송료 :${vo.ldelivery }</span>
 						</p>
 				</li>
 	
@@ -59,7 +63,7 @@
 
 		<c:if test="${sid=='admin'}">
 		<div id ="btn_group">
-			<a href="${path1 }/insertLeadersForm.jsp" class="button is-info">상품등록</a>
+			<a href="${path1 }/leaders/insertLeadersForm.jsp" class="button is-info">상품등록</a>
 		</div>
 		</c:if>
 </section>	

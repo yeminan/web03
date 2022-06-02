@@ -15,77 +15,70 @@
 <div id="content" class="content_wrap">
 	<section class="con_wrap">
 		<h2>상품 등록</h2>
-		<form action="${path1 }/AddGoodsCtrl" method="post" enctype="multipart/form-data">
+		<form action="${path1 }/AddLeadersCtrl" method="post" enctype="multipart/form-data">
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
 						<th>카테고리</th>
 						<td>
-							<select name="gcategory" class="select is-primary" required>
-								<option value="sidedish">반찬</option>
-								<option value="soup">국/찌개</option>
-								<option value="noodle">면</option>
-								<option value="rice">밥</option>
-								<option value="porridge">죽</option>
-								<option value="salad">샐러드</option>
-								<option value="bakery">베이커리</option>
-								<option value="drink">드링크</option>
+							<select name="lcategory" class="select is-primary" required>
+								<option value="lcode">상품코드</option>
+								<option value="lamount">상품수량</option>
+								<option value="lprice">상품가격</option>
+								<option value="limg">상품이미지</option>
+								<option value="lcategory">상품카테고리</option>
+								<option value="lcontent">상품내용</option>
+								<option value="ldelivery">배송료</option>
 							</select>
 						</td>
 					</tr>
 					<tr>
-						<th>상품명</th>
+						<th>상품코드</th>
 						<td>
-							<input type="text" name="gname" class="input is-primary" required>
-						</td>
-					</tr>
-					<tr>
-						<th>상품가격</th>
-						<td>
-							<input type="number" name="gprice" min="1000" max="1000000" step="100" class="input is-primary" required>
-						</td>
-					</tr>
-					<tr>
-						<th>상품 색상</th>
-						<td>
-							<input type="text" name="gcolor" class="input is-primary">
+							<input type="number" name="lcode" min="1" max="1000" step="1" class="input is-primary" required>
 						</td>
 					</tr>
 					<tr>
 						<th>상품 수량</th>
 						<td>
-							<input type="number" name="amount" min="1" max="10000" class="input is-primary">
+							<input type="text" name="lprice" class="input is-primary">
 						</td>
 					</tr>
 					<tr>
-						<th>상품 규격</th>
+						<th>상품 가격</th>
 						<td>
-							<input type="text" name="gsize" class="input is-primary">
-						</td>
-					</tr>
-					<tr>
-						<th>상품 설명</th>
-						<td>
-							<textarea cols="10" rows="8" name="gcontent" class="textarea is-primary"></textarea>
+							<input type="number" name="lamount" min="1000" max="10000" class="input is-primary">
 						</td>
 					</tr>
 					<tr>
 						<th>상품 이미지</th>
 						<td>
-							<input type="file" accept="*.jpeg,*.jpg, *.png, *.gif" name="gimage" class="input is-primary">
+							<input type="file" accept="*.jpeg,*.jpg, *.png, *.gif" name="limg" class="input is-primary">
 						</td>
 					</tr>
 					<tr>
-						<th>인기도</th>
+						<th>상품 카테고리</th>
 						<td>
-							<input type="number" min="1" max="10" name="best" class="input is-primary">
+							<input type="submit" name="lcategory" class="input is-primary">
+						</td>
+					</tr>
+					<tr>
+						<th>상품 내용</th>
+						<td>
+							<textarea rows="10" cols="50" name="lcontent"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<th>배송료</th>
+						<td>
+							<input type="number" min="1000" max="3000" name="ldelivery" class="input is-primary">
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2">
 							<input type="submit" value="제품 등록" class="button is-info"/>
 							<input type="reset" value="취소" class="button is-info"/>
-							<a href="${path1 }/GetGoodsListCtrl" class="button is-info">목록</a>
+							<a href="${path1 }/GetLeadersListCtrl" class="button is-info">목록</a>
 						</td>
 					</tr>
 				</tbody>

@@ -21,22 +21,21 @@
 		<c:if test="${sid!='admin' }">
 		<h2 class="page_tit">상품 정보 보기</h2>
 		</c:if>
-		<form action="${path1 }/GetLeadersListCtrl" method="post" enctype="multipart/form-data">
+		<form action="${path1 }/EditLeadersCtrl" method="post" enctype="multipart/form-data">
 			<table class="table" id="lst_tb">
 				<tbody>
 				<tr>
-						<th>상품코드</th>
+						<th>상품제목</th>
 						<td>
 						<c:if test="${num=='admin' }">
-							<input type="text" name="lcode" value="${leaders.lcode }">
+							<input type="text" name="ltitle" value="${leaders.lcode }">
 						</c:if>
 						<c:if test="${num!='admin' }">
 							<p>${leaders.lcode }</p>
 						</c:if>
-							<input type="hidden" name="lcode" value="${leaders.lcode }">
+							<input type="hidden" name="lcode" value="${leaders.lcode }"> 
 						</td>
-					</tr>
-					<tr>
+					
 						<th>상품수량</th>
 						<td>
 							<c:if test="${sid=='admin' }">
@@ -50,22 +49,17 @@
 					<tr>
 						<th>상품카테고리</th>
 						<td>
-						<input type="button" value="칫솔"   	name="lcategory"><br>
-						<input type="button" value="치실" 	name="lcategory"><br>
-						<input type="button" value="치간칫솔" 	name="lcategory"><br>
-						<input type="button" value="틀니" 	name="lcategory"><br>
-						<input type="button" value="세트용품" 	name="lcategory"><br>
-						<input type="button" value="구강위생용품" 	name="lcategory"><br>
-						<input type="button" value="생활용품" 	name="lcategory"><br>
-		
+							<select name="lcategory">
+								<option value="Toothbrush">칫솔</option>
+								<option value="Dental floss">치실</option>
+								<option value="teeth">치간칫솔</option>
+								<option value="dentures">틀니</option>
+								<option value="supplies">세트용품</option>
+							</select>
 						</td>
 					</tr>
 					<tr>
 						<th>상품이미지</th>
-						<td>
-							<input type= "text" name="limg" value="어린이용치실" readonly>
-							<input type="image" src="${path1 }/img/leaderssill.jpg" >
-						</td>
 						<td>
 							<c:if test="${sid=='admin' }">
 							<input type="file" accept="*.jpeg,*.jpg, *.png, *.gif" name="limg" value="${leaders.limg }" class="input is-normal">
@@ -80,7 +74,7 @@
 						</td>
 					</tr>
 					<tr>
-					<th>상품가격</th>
+						<th>상품가격</th>
 						<td>
 							<c:if test="${sid=='admin' }">
 							<input type="number" name="lprice" min="1000" max="1000000" step="100" value="${leaders.lprice }" class="input is-normal" required>
@@ -93,7 +87,7 @@
 					<tr>
 						<th>배송료</th>
 						<td>
-							<input type="text" value="2500"name="ldelivery" readonly>
+							<input type="text" value="2500" name="ldelivery" readonly>
 						</td>
 					</tr>
 					<tr>
@@ -104,7 +98,7 @@
 							<a href="${path1 }/DelLeadersCtrl?gno=${leaders.lcode }" class="button is-info">상품 삭제</a>
 							</c:if>
 							<c:if test="${sid!='admin' }">
-							<a href="${path1 }/AddBasketCtrl?bno=${leaders.lcode }" class="button is-info">장바구니 담기</a>
+							<a href="${path1 }/AddBasketCtrl?gno=${leaders.lcode }" class="button is-info">장바구니 담기</a>
 							<a href="${path1 }/saleForm.jsp?bno=${leaders.lcode }" class="button is-info">바로 구매</a>
 							</c:if>
 							<a href="${path1 }/GetLeadersListCtrl" class="button is-info">목록</a>

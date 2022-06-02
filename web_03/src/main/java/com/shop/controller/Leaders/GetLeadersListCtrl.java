@@ -23,8 +23,10 @@ public class GetLeadersListCtrl extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		LeadersDAO le= new LeadersDAO();
-		ArrayList<LeadersVO> list = le.getLeadersList();
+
+		LeadersDAO vo = new LeadersDAO();
+		ArrayList<LeadersVO> list = vo.getLeadersList();
+		
 		request.setAttribute("list",list);
 		RequestDispatcher view=request.getRequestDispatcher("./leaders/getLeadersList.jsp");
 		view.forward(request, response);

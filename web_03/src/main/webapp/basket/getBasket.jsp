@@ -53,7 +53,7 @@ margin-top:20px; margin-bottom:15px; }
 		</ul>
 		<c:if test="${sid=='admin' }">
 		<div id="btn_group">
-			<a href="${path1 }/goods/insertleadersForm.jsp" class="button is-info">제품 등록</a>
+			<a href="${path1 }/leaders/getLeadersList.jsp" class="button is-info">제품 등록</a>
 		</div>
 		</c:if>	
 	</section>

@@ -8,10 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.oreilly.servlet.MultipartRequest;
 import com.shop.common.LeadersVO;
 import com.shop.model.LeadersDAO;
 
-@WebServlet("/UpdateLeadersCtrl")
+@WebServlet("/EditLeadersCtrl")
 public class EditLeadersCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public EditLeadersCtrl() {
@@ -21,32 +22,47 @@ public class EditLeadersCtrl extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
+		String saveFolder = "D:/LMH/jsp1/web_03/src/main/webapp/upload";
+		String encType = "UTF-8";
+		int maxSize = 10 * 1024 * 1024;	// 10MB
 		
-		int lcode=Integer.parseInt(request.getParameter("lcode"));
-		int lmount= Integer.parseInt(request.getParameter("lmount"));
-		int lprice = Integer.parseInt(request.getParameter("lprice"));
-		String lcategory = request.getParameter("lcategory");
-		String limg = request.getParameter("limg");
-		String lcontent = request.getParameter("lcontent");
-		int ldelivery = Integer.parseInt(request.getParameter("ldelivery"));
+		MultipartRequest multi = new MultipartRequest(request,
+				saveFolder, maxSize, encType);
 		
-		
-		LeadersVO vo= new LeadersVO();
+		int lcode=Integer.parseInt(multi.getParameter("lcode"));
+		String ltitle =multi.getParameter("ltitle");
+		int lamount = Integer.parseInt(multi.getParameter("lamount"));
+		int lprice =Integer.parseInt(multi.getParameter("lprice"));
+		String lcategory = multi.getParameter("lcategory");
+		String lcontent=multi.getParameter("lcontent");
+		String limg= "";
+		int ldelivery=Integer.parseInt(multi.getParameter("ldelivery"));
+		try {			
+			if (multi.getFilesystemName("lmg") != null) {
+				String name = multi.getFilesystemName("limg");
+				limg = name;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		LeadersVO vo =new LeadersVO();
 		vo.setLcode(lcode);
-		vo.setLamount(lmount);
+		vo.setLtitle(ltitle);
+		vo.setLamount(lamount);
 		vo.setLprice(lprice);
 		vo.setLcategory(lcategory);
-		vo.setLimg(limg);
 		vo.setLcontent(lcontent);
+		vo.setLimg(limg);
 		vo.setLdelivery(ldelivery);
 		
-		LeadersDAO le= new LeadersDAO();
-		int cnt= le.addLeadersVO(vo);
-		if(cnt>0){
+		LeadersDAO le=new LeadersDAO();
+		
+		int cnt = le.editLeadersVO(vo);
+		if(cnt>0) {  
 			response.sendRedirect("GetLeadersListCtrl");
-		}else {
-			response.sendRedirect("GetLeadersCtrl? lcode="+lcode);
-		}
+		} else { 
+			response.sendRedirect("./leaders/getLeaders.jsp?lcode="+lcode);
+		}	
 	}
 
 }

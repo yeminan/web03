@@ -157,11 +157,7 @@
 		            <strong>글 관리</strong>
 		          </a>
 		         <a href="${path }/GetMemberListCtrl" class="button is-light">
-		            회원관리
-		          </a>
-		             <a href="${path }/adminGetMemberListCtrl" class="button is-light">
-		            회원관리2
-		          </a>
+		            회원관리</a>
 		          <a href="${path }/GetLeadersListCtrl" class="button is-light">
 		            제품관리
 		            </a>

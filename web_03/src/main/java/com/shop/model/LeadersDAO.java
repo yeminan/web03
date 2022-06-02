@@ -26,6 +26,7 @@ public class LeadersDAO {
 					list =new ArrayList<LeadersVO>();
 					while(rs.next()) {
 						LeadersVO le= new LeadersVO();
+						le.setLtitle(rs.getString("ltitle"));
 						le.setLcode(rs.getInt("lcode"));
 						le.setLamount(rs.getInt("lamount"));
 						le.setLprice(rs.getInt("lprice"));
@@ -53,15 +54,16 @@ public class LeadersDAO {
 			
 			try {
 				conn=JDBCConnection.getConnection();
-				sql="insert into leaders values(?,?,?,?,?,?,?) ";
+				sql="insert into leaders values(select nvl(max(lcode), 0)+1 from leaders),?,?,?,?,?,?,?) ";
 				pstmt=conn.prepareStatement(sql);
 				pstmt.setInt(1,le.getLcode());
-				pstmt.setInt(2,le.getLamount());
-				pstmt.setInt(3,le.getLprice());
-				pstmt.setString(4, le.getLcategory());
-				pstmt.setString(5,le.getLimg());
-				pstmt.setString(6,le.getLcontent());
-				pstmt.setInt(7,le.getLdelivery());
+				pstmt.setString(2,le.getLtitle());
+				pstmt.setInt(3,le.getLamount());
+				pstmt.setInt(4,le.getLprice());
+				pstmt.setString(5, le.getLcategory());
+				pstmt.setString(6,le.getLimg());
+				pstmt.setString(7,le.getLcontent());
+				pstmt.setInt(8,le.getLdelivery());
 				
 				cnt=pstmt.executeUpdate();
 			}catch(ClassNotFoundException e) {
@@ -79,7 +81,7 @@ public class LeadersDAO {
 		public int editLeadersVO (LeadersVO le) {
 			try {
 			conn=JDBCConnection.getConnection();
-			sql="update leaders set lamount=?,lprice=?,lcategory=?,limg=?,lcontent=?,ldelivery=? where lcode=?";
+			sql="update leaders set lamount=?,lprice=?,lcategory=?,limg=?,lcontent=?,ldelivery=?,lcode=? where ltitle=?";
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, le.getLamount());
 			pstmt.setInt(2,le.getLprice());
@@ -88,8 +90,8 @@ public class LeadersDAO {
 			pstmt.setString(5,le.getLcontent());
 			pstmt.setInt(6,le.getLdelivery());
 			pstmt.setInt(7,le.getLcode());
-		
-			pstmt.setInt(4,le.getLdelivery());
+			pstmt.setString(8,le.getLtitle());
+			
 			cnt=pstmt.executeUpdate();
 			}catch(ClassNotFoundException e) {
 				e.printStackTrace();
@@ -108,12 +110,13 @@ public class LeadersDAO {
 			LeadersVO le=new LeadersVO();
 			try {
 				conn=JDBCConnection.getConnection();
-				sql="select *from leaders where lcode";
+				sql="select *from leaders where lcode=?";
 				pstmt=conn.prepareStatement(sql);
 				pstmt.setInt(1, lcode);
 				rs=pstmt.executeQuery();
 				if(rs.next()) {
 					le.setLcode(rs.getInt("lcode"));
+					le.setLtitle(rs.getString("ltitle"));
 					le.setLamount(rs.getInt("lamount"));
 					le.setLprice(rs.getInt("lprice"));
 					le.setLcategory(rs.getString("lcategory"));
@@ -135,12 +138,12 @@ public class LeadersDAO {
 		}
 		
 		
-		public int delLeaders(int ds) {
+		public int delLeaders(int lcode) {
 			try {
 				conn=JDBCConnection.getConnection();
-				sql="delete *from leaders where lcode";
+				sql="delete *from leaders where lcode=?";
 				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(1,ds);
+				pstmt.setInt(1,lcode);
 				cnt = pstmt.executeUpdate();
 			}catch(ClassNotFoundException e) {
 				e.printStackTrace();

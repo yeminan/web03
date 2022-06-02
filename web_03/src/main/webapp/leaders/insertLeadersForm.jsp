@@ -15,38 +15,50 @@
 <div id="content" class="content_wrap">
 	<section class="con_wrap">
 		<h2>제품등록</h2>
-		<form action="${path1 }/AddLeadersCtrl" method="post">
+		<form action="${path1 }/AddBasketCtrl" method="post">
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
 						<th>상품코드</th>
 						<td>
-						<c:if test="${sid=='admin' }">
-							<input type="text" name="lcode" value="${leaders.lcode }">
+						<c:if test="${num=='admin' }">
+							<input type="text" name="ltitle" value="${leaders.ltitle }">
 						</c:if>
-						<c:if test="${sid!='admin' }">
+						<c:if test="${num!='admin' }">
 							<p>${leaders.lcode }</p>
 						</c:if>
 							<input type="hidden" name="lcode" value="${leaders.lcode }">
 						</td>
-					</tr>
 					<tr>
 						<th>상품수량</th>
 						<td>
-						<input type="number" name="lamount" min="1" max="20" step="1"><br>
+							<c:if test="${sid=='admin' }">
+							<input type="number" name="lamount" min="1" max="10000" value="${leaders.lamount }" class="input is-normal" >
+							</c:if>
+							<c:if test="${sid!='admin' }">
+							<span>${leaders.lamount }</span>
+							</c:if>
 						</td>
 					</tr>
 					<tr>
 						<th>상품카테고리</th>
 						<td>
-							<input type= "text" name="lcategory" value="칫솔" >
+							<select name="lcategory">
+								<option value="Toothbrush">칫솔</option>
+								<option value="Dental floss">치실</option>
+								<option value="teeth">치간칫솔</option>
+								<option value="dentures">틀니</option>
+								<option value="supplies">세트용품</option>
+							</select>
 						</td>
 					</tr>
 					<tr>
 						<th>상품이미지</th>
 						<td>
-							<input type= "text" name="limg" value="어린이이중 슬림모" >
-							<input type="image" src="${path1 }/img/brush.jpg" >
+							<c:if test="${sid=='admin' }">
+							<input type="file" accept="*.jpeg,*.jpg, *.png, *.gif" name="limg" value="${leaders.limg }" class="input is-normal">
+							</c:if>
+							<img src="${path1 }/upload/${leaders.limg }" alt="${leaders.limg }" />
 						</td>
 					</tr>
 					<tr>
@@ -56,23 +68,27 @@
 						</td>
 					</tr>
 					<tr>
-						<th>가격</th>
+					<th>상품가격</th>
 						<td>
-							<input type="text" value="1500"name="lprice">
+							<c:if test="${sid=='admin' }">
+							<input type="number" name="lprice" min="1000" max="1000000" step="100" value="${leaders.lprice }" class="input is-normal" required>
+							</c:if>
+							<c:if test="${sid!='admin' }">
+							<span>${leaders.lprice }</span>
+							</c:if>
 						</td>
 					</tr>
 					<tr>
 						<th>배송료</th>
 						<td>
-							<input type="text" value="2000"name="ldelivery" >
+							<input type="text" value="2500"name="ldelivery" readonly>
 						</td>
 					</tr>
-					
 					<tr>
 						<td colspan="2">
-							<input type="submit"  value="글 등록" class="button is-info"/>
+							<input type="submit" value="글 등록" class="button is-info"/>
 							<input type="reset" value="취소" class="button is-info"/>
-							<a href="${path1 }/GetLeadersListCtrl" class="button is-info">목록</a>
+							<a href="${path1 }/GetBasketListCtrl" class="button is-info">목록</a>
 						</td>
 					</tr>
 				</tbody>

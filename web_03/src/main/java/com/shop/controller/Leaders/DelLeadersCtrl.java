@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.shop.model.LeadersDAO;
 
 
-@WebServlet("/DeleteLeadersCtrl")
+@WebServlet("/DelLeadersCtrl")
 public class DelLeadersCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

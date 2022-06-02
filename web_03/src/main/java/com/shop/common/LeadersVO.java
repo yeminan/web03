@@ -1,6 +1,7 @@
 package com.shop.common;
 
 public class LeadersVO {
+	private String ltitle;
 	private int lcode;
 	private int lamount;
 	private int lprice;
@@ -8,6 +9,13 @@ public class LeadersVO {
 	private String limg;
 	private String lcontent;
 	private int ldelivery;
+	
+	public String getLtitle() {
+		return ltitle;
+	}
+	public void setLtitle(String ltitle) {
+		this.ltitle = ltitle;
+	}
 	public int getLcode() {
 		return lcode;
 	}
