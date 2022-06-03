@@ -38,7 +38,7 @@ public class AddLeadersCtrl extends HttpServlet {
 		String limg= "";
 		int ldelivery=Integer.parseInt(multi.getParameter("ldelivery"));
 		try {			
-			if (multi.getFilesystemName("lmg") != null) {
+			if (multi.getFilesystemName("limg") != null) {
 				String name = multi.getFilesystemName("limg");
 				limg = name;
 			}

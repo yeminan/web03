@@ -15,11 +15,11 @@
 <div id="content" class="content_wrap">
 	<section class="con_wrap">
 		<h2>제품등록</h2>
-		<form action="${path1 }/AddBasketCtrl" method="post">
+		<form action="${path1 }/GetLeadersListCtrl" method="post">
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
-						<th>상품코드</th>
+						<th>상품이름</th>
 						<td>
 						<c:if test="${num=='admin' }">
 							<input type="text" name="ltitle" value="${leaders.ltitle }">

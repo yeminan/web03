@@ -38,7 +38,7 @@
 					<tr>
 						<th>내용</th>
 						<td>
-							<textarea cols="100" rows ="7" name="content" required></textarea>
+							<textarea cols="100" rows ="7" name="lcontent" required></textarea>
 						</td>
 					</tr>
 					<tr>

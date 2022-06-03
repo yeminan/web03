@@ -23,7 +23,8 @@ public class GetLeadersListCtrl extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-
+		
+		
 		LeadersDAO vo = new LeadersDAO();
 		ArrayList<LeadersVO> list = vo.getLeadersList();
 		

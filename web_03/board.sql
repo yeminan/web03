@@ -5,7 +5,7 @@ regdate date,
 id varchar2(20)not null,
 visit number );
 commit;
-
+--board더미데이터 추가
 insert into board values(1,'글제목1 입니다','글내용1 입니다',sysdate,'lmh',0);
 insert into board values((select nvl(max(seq), 0)+1 from board), '글제목2 입니다.', '글내용2 입니다',sysdate, 'admin',0);
 insert into board values((select nvl(max(seq), 0)+1 from board), '글제목3 입니다.', '글내용3 입니다',sysdate, 'LLL',0);
@@ -19,7 +19,7 @@ update board set title=?, content=?, regdate=sysdate,  id=? where seq=?;
 delete from board where seq=?;
 
 select * from board;
-
+--member테이블 보기
 create table member (userid varchar2(20) primary key,
 userpw varchar2(300) not null,
 email varchar2(100) not null,
@@ -28,6 +28,7 @@ address varchar2(100) not null,
 regdate date default sysdate,
 birth date,
 visited number default 0);
+--member 더미데이터추가
 insert into member values('admin','1234','admin@naver.com','010-1234-1111','경기도 고양시 덕양구 주교동',sysdate,'1997-09-04','1');
 insert into member values('lmh','1111','lmh@naver.com','010-1111-1111','경기도 고양시 덕양구 행신동',sysdate,'1987-12-31','2');
 insert into member values('hhh','2222','hhh@naver.com','010-2222-2222','경기도 고양시 덕양구 성사동',sysdate,'1977-11-11','3');
@@ -38,7 +39,7 @@ insert into member values('jung','6666','jung@naver.com','010-5555-5555','경기
 select * from member;
 
 commit;
-
+--leaders 테이블 
 create table leaders(
 lcode number primary key,
 ltitle varchar2(100),
@@ -49,21 +50,16 @@ limg varchar2(500),
 lcontent varchar(3000),
 ldelivery number);
 
+--leaders더미데이터 추가
+insert into leaders values(1,'이중슬림모',10,18000,'성인','img/brush3.jpg','성인용 이중슬림모 칫솔',2500);
+insert into leaders values(2,'슬림모',15,18000,'성인','img/brush6.jpg','성인용 슬림모 칫솔',2500);
+insert into leaders values(3,'일반모',10,15000,'성인','img/brush1.jpg','성인용 일반모 칫솔',2500);
+insert into leaders values(11,'일반모',5,11000,'청소년','img/brush5.jpg','청소년용 일반모 칫솔',2500);
+insert into leaders values(12,'이중슬림모',11,11000,'청소년','img/brush4.jpg','청소년용 이중슬림모 칫솔',2500);
 select * from leaders;
 
-insert into leaders values(1,10,1500,'칫솔','img/leaderssill.png','어린이일회용 칫솔','2000');
-insert into leaders values(2,10,2000,'치실','img/leaderssill.png','어린이일회용 치실','2000');
-insert into leaders values(3,10,3000,'치간칫솔','img/leaderssill.png','치간칫솔 가정용','2500');
-insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
-insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
-insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
-insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
-insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
-insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
-insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
-insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
-insert into leaders values(4,10,12000,'틀니용품','img/leaderssill.png','틀니용품세트','2500');
-
+commit;
+--접속자 테이블 
 CREATE TABLE db_access (
   no number primary key,
   request_uri varchar(100),
@@ -80,7 +76,7 @@ CREATE TABLE db_access (
   reg_date date default sysdate
 );
 
-
+--장바구니테이블
 create table basket(bno number primary key, -- 장바구니번호
 userid varchar2(20),    -- 사용자아이디
 gno number,             -- 상품코드
@@ -90,6 +86,7 @@ gsize varchar2(40),     -- 크기
 bdate Date);            -- 장바구니 담긴 날짜
 
 select * from BASKET;
+--장바구니 더미 추가
 insert into basket values ((select nvl(max(bno), 0)+1 from basket), ?, ?, ?, ?, ?, sysdate);
 
 --장바구니 정보 변경

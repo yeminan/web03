@@ -25,17 +25,28 @@
 			<table class="table" id="lst_tb">
 				<tbody>
 				<tr>
-						<th>상품제목</th>
+						<th>상품코드</th>
 						<td>
-						<c:if test="${num=='admin' }">
-							<input type="text" name="ltitle" value="${leaders.lcode }">
+						<c:if test="${sid=='admin' }">
+							<input type="text" name="lcode" value="${leaders.lcode }">
 						</c:if>
-						<c:if test="${num!='admin' }">
+						<c:if test="${sid!='admin' }">
 							<p>${leaders.lcode }</p>
 						</c:if>
 							<input type="hidden" name="lcode" value="${leaders.lcode }"> 
 						</td>
-					
+				<tr>
+						<th>상품명</th>
+							<td>
+							<c:if test="${sid=='admin' }">
+							<input type="text" name="ltitle" value="${leaders.ltitle }" class="input is-normal" required>
+							</c:if>
+							<c:if test="${sid!='admin' }">
+							<span>${leaders.ltitle }</span>
+							</c:if>
+							</td>
+				</tr>
+				<tr>
 						<th>상품수량</th>
 						<td>
 							<c:if test="${sid=='admin' }">
@@ -45,10 +56,11 @@
 							<span>${leaders.lamount }</span>
 							</c:if>
 						</td>
-					</tr>
-					<tr>
+				</tr>
+				<tr>
 						<th>상품카테고리</th>
 						<td>
+							<c:if test="${sid=='admin' }">
 							<select name="lcategory">
 								<option value="Toothbrush">칫솔</option>
 								<option value="Dental floss">치실</option>
@@ -56,6 +68,9 @@
 								<option value="dentures">틀니</option>
 								<option value="supplies">세트용품</option>
 							</select>
+							<input type="hidden" name="lcode" value="${leaders.lcode }">
+							</c:if>
+							<span>${leaders.lcategory }</span>
 						</td>
 					</tr>
 					<tr>
@@ -70,7 +85,14 @@
 					<tr>
 						<th>상품 내용</th>
 						<td>
-							<textarea cols="100" rows ="7" name="lcontent" required>저희 리더스는 2009년에 설립된 치과 구가용품 전문 브랜드 입니다 전국 보건소,치과전용 구강위생용품을 수년간 납품해온 업체로 맛있는 칫솔로 건강한 치아를 지켜드립니다</textarea>	
+							<c:if test="${sid='admin' }">
+							<input type="text" name="lcontent" value="저희 리더스는 2009년에 설립된 치과 구가용품 전문 브랜드 입니다 전국 보건소,치과전용 구강위생용품을 수년간 납품해온 업체로 맛있는 칫솔로 건강한 치아를 지켜드립니다">
+							<textarea cols="100" rows ="7" name="lcontent" required></textarea>	
+							</c:if>
+							<c:if test="${sid!='admin' }">
+							<p>${leaders.lcontent }</p>
+							<input type="text" name="lcontent" value="저희 리더스는 2009년에 설립된 치과 구가용품 전문 브랜드 입니다 전국 보건소,치과전용 구강위생용품을 수년간 납품해온 업체로 맛있는 칫솔로 건강한 치아를 지켜드립니다">
+							</c:if>
 						</td>
 					</tr>
 					<tr>
@@ -87,7 +109,12 @@
 					<tr>
 						<th>배송료</th>
 						<td>
+							<c:if test="${sid=='admin' }">
 							<input type="text" value="2500" name="ldelivery" readonly>
+							</c:if>
+							<c:if test="${sid!='admin' }">
+							<span>${leaders.ldelivery }</span>
+							</c:if>
 						</td>
 					</tr>
 					<tr>

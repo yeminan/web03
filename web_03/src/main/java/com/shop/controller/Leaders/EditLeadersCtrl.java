@@ -18,7 +18,7 @@ public class EditLeadersCtrl extends HttpServlet {
     public EditLeadersCtrl() {
         super();
     }
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
@@ -38,7 +38,7 @@ public class EditLeadersCtrl extends HttpServlet {
 		String limg= "";
 		int ldelivery=Integer.parseInt(multi.getParameter("ldelivery"));
 		try {			
-			if (multi.getFilesystemName("lmg") != null) {
+			if (multi.getFilesystemName("limg") != null) {
 				String name = multi.getFilesystemName("limg");
 				limg = name;
 			}
@@ -61,7 +61,7 @@ public class EditLeadersCtrl extends HttpServlet {
 		if(cnt>0) {  
 			response.sendRedirect("GetLeadersListCtrl");
 		} else { 
-			response.sendRedirect("./leaders/getLeaders.jsp?lcode="+lcode);
+			response.sendRedirect("./leaders/getLeaders.jsp");
 		}	
 	}
 

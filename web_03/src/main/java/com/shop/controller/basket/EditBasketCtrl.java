@@ -22,11 +22,11 @@ public class EditBasketCtrl extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		int lcode=Integer.parseInt(request.getParameter("lcode"));
-		int lmount= Integer.parseInt(request.getParameter("lmount"));
+		int lamount= Integer.parseInt(request.getParameter("lamount"));
 		
 		LeadersVO vo= new LeadersVO();
 		vo.setLcode(lcode);
-		vo.setLamount(lmount);
+		vo.setLamount(lamount);
 		
 		LeadersDAO le= new LeadersDAO();
 		

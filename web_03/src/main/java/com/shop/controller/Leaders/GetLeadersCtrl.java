@@ -24,6 +24,7 @@ public class GetLeadersCtrl extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		int lcode = Integer.parseInt(request.getParameter("lcode"));
+		
 		LeadersDAO le = new LeadersDAO();
 		LeadersVO leaders = new LeadersVO();
 		leaders = le.getLeaders(lcode);

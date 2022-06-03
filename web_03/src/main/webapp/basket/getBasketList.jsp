@@ -33,8 +33,8 @@ margin-top:20px; margin-bottom:15px; }
 				<tr>
 					<td>
 						<select name="searchCondition" required>
-							<option value="title">제목</option>
-							<option value="content">내용</option>
+							<option value="ltitle">제목</option>
+							<option value="lcontent">내용</option>
 						</select>
 						<input type="text" name="searchKeyword" required />
 						<input type="submit" value="검색" class="button is-info"/>

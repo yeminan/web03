@@ -15,13 +15,47 @@ public class LeadersDAO {
 		private ResultSet rs = null;
 		String sql="";
 		int cnt = 0;
-		
 		public ArrayList<LeadersVO> getLeadersList() {
+			ArrayList<LeadersVO> list = null;
+			try {
+				conn = JDBCConnection.getConnection();
+				sql = "select * from Leaders";
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				list = new ArrayList<LeadersVO>();
+				while(rs.next()) {
+					LeadersVO vo = new LeadersVO();
+					vo.setLcode(rs.getInt("lcode"));
+					vo.setLtitle(rs.getString("ltitle"));
+					vo.setLamount(rs.getInt("lamount"));
+					vo.setLprice(rs.getInt("lprice"));
+					vo.setLcategory(rs.getString("lcategory"));
+					vo.setLimg(rs.getString("limg"));
+					vo.setLcontent(rs.getString("lcontent"));
+					vo.setLdelivery(rs.getInt("ldelivery"));
+					list.add(vo);
+				}
+			} catch(ClassNotFoundException e) {
+				System.out.println("드라이버 로딩이 실패되었습니다.");
+				e.printStackTrace();
+			} catch(SQLException e) {
+				System.out.println("SQL구문이 처리되지 못했습니다.");
+				e.printStackTrace();
+			} catch(Exception e) {
+				System.out.println("잘못된 요청으로 업무를 처리하지 못했습니다.");
+				e.printStackTrace();
+			} finally {
+				JDBCConnection.close(rs, pstmt, conn);
+			}
+			return list;
+		}
+		public ArrayList<LeadersVO> getLeadersList(String lcategory) {
 				ArrayList<LeadersVO> list = null;
 				try {
 					conn=JDBCConnection.getConnection();
-					sql="select * from leaders";
+					sql="select * from leaders where lcategory=?";
 					pstmt=conn.prepareStatement(sql);
+					pstmt.setString(1,lcategory);
 					rs=pstmt.executeQuery();
 					list =new ArrayList<LeadersVO>();
 					while(rs.next()) {
@@ -50,6 +84,43 @@ public class LeadersDAO {
 				}
 			return list;
 		}
+		public ArrayList<LeadersVO> getLeadersList(String lcategory, String lcategory2) {
+			ArrayList<LeadersVO> list = null;
+			try {
+				conn=JDBCConnection.getConnection();
+				sql="select * from leaders where lcategory=? or lcategory2=?";
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, lcategory);
+				pstmt.setString(2, lcategory2);
+				rs=pstmt.executeQuery();
+				list =new ArrayList<LeadersVO>();
+				while(rs.next()) {
+					LeadersVO le= new LeadersVO();
+					le.setLtitle(rs.getString("ltitle"));
+					le.setLcode(rs.getInt("lcode"));
+					le.setLamount(rs.getInt("lamount"));
+					le.setLprice(rs.getInt("lprice"));
+					le.setLcategory(rs.getString("lcategory"));
+					le.setLimg(rs.getString("limg"));
+					le.setLcontent(rs.getString("lcontent"));
+					le.setLdelivery(rs.getInt("ldelivery"));
+					list.add(le);
+				}
+			}catch(ClassNotFoundException e){
+				System.out.println("드라이버 로딩이 실패되었습니다.");
+				e.printStackTrace();
+			} catch(SQLException e) {
+				System.out.println("SQL구문이 처리되지 못했습니다.");
+				e.printStackTrace();
+			} catch(Exception e) {
+				System.out.println("잘못된 요청으로 업무를 처리하지 못했습니다.");
+				e.printStackTrace();
+			}finally {
+				JDBCConnection.close(rs,pstmt,conn);
+			}
+		return list;
+		
+	}
 		public int addLeadersVO (LeadersVO le) {
 			
 			try {
@@ -81,7 +152,7 @@ public class LeadersDAO {
 		public int editLeadersVO (LeadersVO le) {
 			try {
 			conn=JDBCConnection.getConnection();
-			sql="update leaders set lamount=?,lprice=?,lcategory=?,limg=?,lcontent=?,ldelivery=?,lcode=? where ltitle=?";
+			sql="update leaders set lamount=?,lprice=?,lcategory=?,limg=?,lcontent=?,ldelivery=?,ltitle=? where lcode=?";
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, le.getLamount());
 			pstmt.setInt(2,le.getLprice());
@@ -89,9 +160,9 @@ public class LeadersDAO {
 			pstmt.setString(4,le.getLimg());
 			pstmt.setString(5,le.getLcontent());
 			pstmt.setInt(6,le.getLdelivery());
-			pstmt.setInt(7,le.getLcode());
-			pstmt.setString(8,le.getLtitle());
-			
+			pstmt.setString(7,le.getLtitle());
+			pstmt.setInt(8,le.getLcode());
+
 			cnt=pstmt.executeUpdate();
 			}catch(ClassNotFoundException e) {
 				e.printStackTrace();

@@ -23,6 +23,7 @@
 						<td>
 							<select name="lcategory" class="select is-primary" required>
 								<option value="lcode">상품코드</option>
+								<option value="ltitle">상품이름</option>
 								<option value="lamount">상품수량</option>
 								<option value="lprice">상품가격</option>
 								<option value="limg">상품이미지</option>
@@ -38,6 +39,13 @@
 							<input type="number" name="lcode" min="1" max="1000" step="1" class="input is-primary" required>
 						</td>
 					</tr>
+					<tr>
+						<th>상품이름</th>
+						<td>
+							<input type="number" name="ltitle" class="input is-primary" required>
+						</td>
+					</tr>
+					
 					<tr>
 						<th>상품 수량</th>
 						<td>
