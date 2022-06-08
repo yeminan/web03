@@ -8,13 +8,13 @@ public class BasketDetailVO {
 	private int amount;		//수량
 	private String gsize;	//크기
 	private String bdate;	//장바구니 등록일
-	private String gcategory;    //상품카테고리
-	private String gname;    	//장바구니 제품 상품명
-	private int gprice; 		//장바구니 제품 가격
-	private String gcontent;    //장바구니 제품 설명
-	private String gimage;  	//장바구니 제품 이미지
-	private int best;    		//장바구니 제품 인기도
-	private String regdate;		//장바구니 제품 등록일
+	private String lcategory;    //상품카테고리
+	private String ltitle;    	//장바구니 제품 상품명
+	private int lprice; 		//장바구니 제품 가격
+	private String lcontent;    //장바구니 제품 설명
+	private String limg;  	//장바구니 제품 이미지
+	private int lamount;
+	private int ldelivery;
 	public int getBno() {
 		return bno;
 	}
@@ -57,46 +57,47 @@ public class BasketDetailVO {
 	public void setBdate(String bdate) {
 		this.bdate = bdate;
 	}
-	public String getGcategory() {
-		return gcategory;
+	public String getLcategory() {
+		return lcategory;
 	}
-	public void setGcategory(String gcategory) {
-		this.gcategory = gcategory;
+	public void setLcategory(String lcategory) {
+		this.lcategory = lcategory;
 	}
-	public String getGname() {
-		return gname;
+	public String getLtitle() {
+		return ltitle;
 	}
-	public void setGname(String gname) {
-		this.gname = gname;
+	public void setLtitle(String ltitle) {
+		this.ltitle = ltitle;
 	}
-	public int getGprice() {
-		return gprice;
+	public int getLprice() {
+		return lprice;
 	}
-	public void setGprice(int gprice) {
-		this.gprice = gprice;
+	public void setLprice(int lprice) {
+		this.lprice = lprice;
 	}
-	public String getGcontent() {
-		return gcontent;
+	public String getLcontent() {
+		return lcontent;
 	}
-	public void setGcontent(String gcontent) {
-		this.gcontent = gcontent;
+	public void setLcontent(String lcontent) {
+		this.lcontent = lcontent;
 	}
-	public String getGimage() {
-		return gimage;
+	public String getLimg() {
+		return limg;
 	}
-	public void setGimage(String gimage) {
-		this.gimage = gimage;
+	public void setLimg(String limg) {
+		this.limg = limg;
 	}
-	public int getBest() {
-		return best;
+	public int getLamount() {
+		return lamount;
 	}
-	public void setBest(int best) {
-		this.best = best;
+	public void setLamount(int lamount) {
+		this.lamount = lamount;
 	}
-	public String getRegdate() {
-		return regdate;
+	public int getLdelivery() {
+		return ldelivery;
 	}
-	public void setRegdate(String regdate) {
-		this.regdate = regdate;
+	public void setLdelivery(int ldelivery) {
+		this.ldelivery = ldelivery;
 	}
+	
 }

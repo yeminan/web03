@@ -39,8 +39,9 @@ public class EditMemberCtrl extends HttpServlet {
 		if(cnt>0) {  //회원정보수정 성공
 			response.sendRedirect("index.jsp");
 		} else {  //회원정보수정 실패
-			response.sendRedirect("./member/mypage.jsp");
+			response.sendRedirect("./member/getMember.jsp");
 		}	
 	}
+	
 }
 	

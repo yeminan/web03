@@ -76,23 +76,23 @@
 					<tr>
 						<th>상품이미지</th>
 						<td>
+							<img src="${path1 }/upload/${leaders.limg }" alt="${leaders.limg }" />
 							<c:if test="${sid=='admin' }">
 							<input type="file" accept="*.jpeg,*.jpg, *.png, *.gif" name="limg" value="${leaders.limg }" class="input is-normal">
 							</c:if>
-							<img src="${path1 }/upload/${leaders.limg }" alt="${leaders.limg }" />
+							<c:if test="${sid!='admin' }">
+							
+							</c:if>
 						</td>
 					</tr>
 					<tr>
 						<th>상품 내용</th>
 						<td>
-							<c:if test="${sid='admin' }">
+							<c:if test="${sid=='admin' }">
 							<input type="text" name="lcontent" value="저희 리더스는 2009년에 설립된 치과 구가용품 전문 브랜드 입니다 전국 보건소,치과전용 구강위생용품을 수년간 납품해온 업체로 맛있는 칫솔로 건강한 치아를 지켜드립니다">
-							<textarea cols="100" rows ="7" name="lcontent" required></textarea>	
+							<textarea cols="100" rows ="4" name="lcontent" required></textarea>	
 							</c:if>
-							<c:if test="${sid!='admin' }">
 							<p>${leaders.lcontent }</p>
-							<input type="text" name="lcontent" value="저희 리더스는 2009년에 설립된 치과 구가용품 전문 브랜드 입니다 전국 보건소,치과전용 구강위생용품을 수년간 납품해온 업체로 맛있는 칫솔로 건강한 치아를 지켜드립니다">
-							</c:if>
 						</td>
 					</tr>
 					<tr>

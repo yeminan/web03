@@ -30,7 +30,7 @@ throws ServletException, IOException {
 		MemberVO member = dao.getMember(userid);
 		if(member != null) {
 			request.setAttribute("member", member);
-			RequestDispatcher view = request.getRequestDispatcher("./member/getMember.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("./member/myPage.jsp");
 			view.forward(request, response);
 		} else {
 			response.sendRedirect("GetMemberListCtrl");

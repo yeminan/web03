@@ -55,6 +55,8 @@ margin-top:20px; margin-bottom:15px; }
 						
 						<span>이름 : ${vo.ltitle }</span>
 						<p>
+						<span>상품코드 : ${vo.lcode }</span>
+						<p>
 						<span>카테고리: ${vo.lcategory }</span>
 						<p>
 						<span>이미지 : ${vo.limg }</span><br>

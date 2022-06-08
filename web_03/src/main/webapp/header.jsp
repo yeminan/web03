@@ -28,7 +28,7 @@
 				         Leaders
 				        </a>
 				   <div class="navbar-dropdown">
-				          <a class="navbar-item" href="GetDiscountListCtrl">
+				          <a class="navbar-item" href="">
 				            회사소개
 				          </a>
 				          <a class="navbar-item">
@@ -41,7 +41,7 @@
 		         ABOUTUS
 		        </a>
 		   <div class="navbar-dropdown">
-		          <a class="navbar-item" href="GetDiscountListCtrl">
+		          <a class="navbar-item" href="">
 		            회사소개
 		          </a>
 		          <a class="navbar-item">
@@ -139,7 +139,7 @@
 	           <a href="${path }/GetBasketListCtrl" class="button is-light">
 	            장바구니
 	          </a>
-	          <a href="" class="button is-light">
+	          <a href="${path }/member/myPage.jsp" class="button is-light">
 	            마이페이지
 	          </a>
 	          

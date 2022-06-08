@@ -92,8 +92,8 @@ public class BasketDAO {
 		try {
 			conn = JDBCConnection.getConnection();
 			sql = "select a.bno as bno, a.userid as userid, a.gno as gno, a.gcolor as gcolor, a.amount as amount, a.gsize as gsize, a.bdate as bdate, ";
-			sql = sql + "b.gcategory as gcategory, b.gname as gname, b.gprice as gprice, b.gcontent as gcontent, b.gimage as gimage, b.best as best from ";
-			sql = sql + "basket a inner join goods b on a.gno=b.gno where a.bno=?";
+			sql = sql + "b.lcategory as lcategory, b.ltitle as ltitle, b.lprice as lprice, b.lcontent as lcontent, b.limg as limg, b.ldelivery as ldelivery from ";
+			sql = sql + "basket a inner join leaders b on a.gno=b.gno where a.bno=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bno);
 			rs = pstmt.executeQuery();
@@ -102,15 +102,15 @@ public class BasketDAO {
 				bs.setUserid(rs.getString("userid"));
 				bs.setGno(rs.getInt("gno"));
 				bs.setGcolor(rs.getString("gcolor"));
-				bs.setAmount(rs.getInt("amount"));
+				bs.setLamount(rs.getInt("lamount"));
 				bs.setGsize(rs.getString("gsize"));
 				bs.setBdate(rs.getString("bdate"));
-				bs.setGcategory(rs.getString("gcategory"));
-				bs.setGname(rs.getString("gname"));
-				bs.setGprice(rs.getInt("gprice"));
-				bs.setGcontent(rs.getString("gcontent"));
-				bs.setGimage(rs.getString("gimage"));
-				bs.setBest(rs.getInt("best"));
+				bs.setLcategory(rs.getString("lcategory"));
+				bs.setLtitle(rs.getString("ltitle"));
+				bs.setLprice(rs.getInt("lprice"));
+				bs.setLcontent(rs.getString("lcontent"));
+				bs.setLimg(rs.getString("limg"));
+				bs.setLdelivery(rs.getInt("ldelivery"));
 				System.out.println(rs.getInt("bno")+", "+rs.getString("userid"));
 			}
 		} catch(ClassNotFoundException e) {

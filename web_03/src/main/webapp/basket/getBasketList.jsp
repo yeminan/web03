@@ -56,7 +56,7 @@ margin-top:20px; margin-bottom:15px; }
 						<span>크기(중량) : ${vo.gsize }</span>
 					</p>
 					<p><span>남은 수량 : ${vo.amount }</span></p>
-					<a href="${path1 }/payment/saleForm.jsp?gno=${vo.gno }&bno=${vo.bno }&gcolor=${vo.gcolor}&gsize=${vo.gsize }" class="button is-primary">구매하기</a>
+					<a href="${path1 }/SailFormCtrl?gno=${vo.gno }&bno=${vo.bno }&gcolor=${vo.gcolor}&gsize=${vo.gsize }" class="button is-primary">구매하기</a>
 					<a href="${path1 }/DelBasketCtrl?bno=${vo.bno }" class="button is-primary">장바구니 삭제</a>
 				</li>
 			</c:forEach>

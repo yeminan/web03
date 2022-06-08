@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-<title>회원 정보 상세보기</title>
+<title>회원 가입 페이지</title>
 <jsp:include page="../common.jsp"></jsp:include>
 </head>
 <body>

@@ -35,14 +35,14 @@ margin-top:20px; margin-bottom:15px; }
 		<ul class="pro_lst" id="lst_tb2">
 				<% if(vo!=null) { %>
 				<li>
-					<h3 class="item_tit">제품명 : <%=vo.getGname() %></h3>
+					<h3 class="item_tit">제품명 : <%=vo.getLtitle() %></h3>
 					<p class="item_data">
-						<span class="img_fr"><img src="${path1 }/upload/<%=vo.getGimage() %>" alt="<%=vo.getGname() %>" /></span>
-						<span>가격 : <%=vo.getGprice() %></span><br>
+						<span class="img_fr"><img src="${path1 }/upload/<%=vo.getLimg() %>" alt="<%=vo.getLtitle() %>" /></span>
+						<span>가격 : <%=vo.getLprice() %></span><br>
 						<span>색상 : <%=vo.getGcolor() %></span><br>
 						<span>크기(중량) : <%=vo.getGsize() %></span>
 					</p>
-					<p><span>남은 수량 : <%=vo.getAmount() %></span></p>
+					<p><span>남은 수량 : <%=vo.getLamount() %></span></p>
 					<br><br><a href="${path1 }/payment/saleForm.jsp?gno=${vo.gno }&bno=${vo.bno }&gcolor=${vo.gcolor}&gsize=${vo.gsize }" class="button is-primary">구매하기</a>
 					<a href="${path1 }/DelBasketCtrl?bno=${vo.bno }" class="button is-primary">장바구니 삭제</a><br><br>
 				</li>

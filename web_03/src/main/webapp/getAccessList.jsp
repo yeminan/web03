@@ -43,6 +43,6 @@ margin-top:20px; margin-bottom:15px; }
 		</ul>
 	</section>
 </div>
-<jsp:include page="../footer.jsp"></jsp:include>
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

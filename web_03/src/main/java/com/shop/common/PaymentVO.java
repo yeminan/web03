@@ -6,7 +6,7 @@ public class PaymentVO {
 	private String payno;	//결제카드번호
 	private int money;		//결제금액
 	private String sdate;	//결제일
-	private int gno;		//상품코드
+	private int lcode;		//상품코드
 	private int amount;		//수량
 	private String userid;	//사용자아이디
 	private String rname;	//수신자명
@@ -49,11 +49,11 @@ public class PaymentVO {
 	public void setSdate(String sdate) {
 		this.sdate = sdate;
 	}
-	public int getGno() {
-		return gno;
+	public int getLcode() {
+		return lcode;
 	}
-	public void setGno(int gno) {
-		this.gno = gno;
+	public void setLcode(int lcode) {
+		this.lcode = lcode;
 	}
 	public int getAmount() {
 		return amount;

@@ -152,6 +152,7 @@ public class LeadersDAO {
 		public int editLeadersVO (LeadersVO le) {
 			try {
 			conn=JDBCConnection.getConnection();
+			if(le.getLimg()!=null) {
 			sql="update leaders set lamount=?,lprice=?,lcategory=?,limg=?,lcontent=?,ldelivery=?,ltitle=? where lcode=?";
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, le.getLamount());
@@ -162,7 +163,17 @@ public class LeadersDAO {
 			pstmt.setInt(6,le.getLdelivery());
 			pstmt.setString(7,le.getLtitle());
 			pstmt.setInt(8,le.getLcode());
-
+			} else {
+				sql="update leaders set lamount=?,lprice=?,lcategory=?,lcontent=?,ldelivery=?,ltitle=? where lcode=?";
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setInt(1, le.getLamount());
+				pstmt.setInt(2,le.getLprice());
+				pstmt.setString(3,le.getLcategory());
+				pstmt.setString(4,le.getLcontent());
+				pstmt.setInt(5,le.getLdelivery());
+				pstmt.setString(6,le.getLtitle());
+				pstmt.setInt(7,le.getLcode());
+			}
 			cnt=pstmt.executeUpdate();
 			}catch(ClassNotFoundException e) {
 				e.printStackTrace();
@@ -177,6 +188,7 @@ public class LeadersDAO {
 			}
 			return cnt;
 		}
+
 		public LeadersVO getLeaders(int lcode) {
 			LeadersVO le=new LeadersVO();
 			try {
@@ -227,4 +239,36 @@ public class LeadersDAO {
 			}
 			return cnt;
 		}
-}
+
+		public int countLeaders(int lcode) {
+			int num = 0;
+			try {
+			conn = JDBCConnection.getConnection();
+			sql = "select lamount from Leaders where lcode=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, lcode);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				num = rs.getInt("lamount");
+			}
+				}catch(ClassNotFoundException e) {
+					System.out.println("드라이버 로딩이 실패되었습니다.");
+					e.printStackTrace();
+				} catch(SQLException e) {
+					System.out.println("SQL구문이 처리되지 못했습니다.");
+					e.printStackTrace();
+				} catch(Exception e) {
+					System.out.println("잘못된 요청으로 업무를 처리하지 못했습니다.");
+					e.printStackTrace();
+				} finally {
+					JDBCConnection.close(pstmt, conn);
+				}
+				return num;
+			}
+		public int countLeaders1(int lcode) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+		
+		}
+

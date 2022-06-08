@@ -23,6 +23,7 @@ public class AddBasketCtrl extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		//getGoods.jsp에서 보내온 userid, gno, gcolor, amount, gsize 를 getParameter로 가져와 해당 변수에 저장
+		
 		int gno = Integer.parseInt(request.getParameter("gno"));
 		String gcolor = request.getParameter("gcolor");
 		String gsize = request.getParameter("gsize");
