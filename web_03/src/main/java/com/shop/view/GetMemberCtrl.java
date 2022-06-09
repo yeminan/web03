@@ -25,12 +25,14 @@ public class GetMemberCtrl extends HttpServlet {
 throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		String userid = request.getParameter("userid");
 		MemberDAO dao = new MemberDAO();
 		MemberVO member = dao.getMember(userid);
 		if(member != null) {
 			request.setAttribute("member", member);
-			RequestDispatcher view = request.getRequestDispatcher("./member/myPage.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("./member/getMember.jsp");
 			view.forward(request, response);
 		} else {
 			response.sendRedirect("GetMemberListCtrl");

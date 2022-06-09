@@ -43,7 +43,7 @@ margin-top:20px; margin-bottom:15px; }
 				<tr>
 					<td><a href="${path1 }/GetPaymentCtrl?ono=${vo.ono }">${vo.ono }</a></td>
 					<td><a href="${path1 }/GetMemberCtrl?userid=${vo.userid }" target="_blank">${vo.userid }</a></td>
-					<td><a href="${path1 }/GetGoodsCtrl?gno=${vo.gno }" target="_blank">${vo.gno }</a></td>
+					<td><a href="${path1 }/GetLeadersCtrl?lcode=${vo.lcode }" target="_blank">${vo.lcode }</a></td>
 					<td>${vo.money }</td>
 					<td>${vo.sdate }</td>
 				</tr>

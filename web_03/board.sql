@@ -56,8 +56,9 @@ insert into leaders values(2,'슬림모',15,18000,'성인','img/brush6.jpg','성
 insert into leaders values(3,'일반모',10,15000,'성인','img/brush1.jpg','성인용 일반모 칫솔',2500);
 insert into leaders values(11,'일반모',5,11000,'청소년','img/brush5.jpg','청소년용 일반모 칫솔',2500);
 insert into leaders values(12,'이중슬림모',11,11000,'청소년','img/brush4.jpg','청소년용 이중슬림모 칫솔',2500);
+insert into leaders values(22,'이중슬림모',8,10000,'어린이','img/brush.jpg','어린이용 이중슬림모 칫솔',2500);
 select * from leaders;
-
+delete from leaders where lcode=1;
 commit;
 --접속자 테이블 
 CREATE TABLE db_access (
@@ -98,7 +99,7 @@ create table payment(ono number primary key, -- 결제번호
     payno varchar2(30),     -- 결제카드번호
     money number,           -- 결제금액
     sdate date,             -- 결제일
-    gno number,             -- 상품코드
+    lcode number,             -- 상품코드
     amount number,          -- 수량
     userid varchar2(20),    -- 사용자아이디
 	rname varchar2(30),     -- 수신자명
@@ -112,6 +113,6 @@ create table payment(ono number primary key, -- 결제번호
     rdate date,             -- 도착일
 	memo varchar2(100)     -- 메모
 );
-
+drop table payment;
 --결제테이블
 select * from payment;

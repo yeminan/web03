@@ -35,7 +35,7 @@
 						<th>작성자</th>
 						<td>
 						<c:if test="${sid=='admin' }">
-							<input type="text" name="nickname" value="${board.id }">
+							<input type="text" name="id" value="${board.id }">
 						</c:if>
 						<c:if test="${sid!='admin' }">
 							<p>${board.id }</p>

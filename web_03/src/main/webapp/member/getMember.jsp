@@ -16,19 +16,19 @@
 <div id="content">
 	<section class="con_wrap">
 		<h2>회원정보 상세보기</h2>
-		<form action="${path1 }/EditAdminMemberCtrl" method="post">
+		<form action="${path1 }/EditMemberCtrl" method="post">
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
 						<th>아이디</th>
 						<td>
 							<input type="text" name="userid" value="${member.userid }" readonly>
-						</td>
+						</td> 
 					</tr>
 					<tr>
 						<th>비밀번호</th>
 						<td>
-							<input type="text" name="userpw" value="${member.userpw }">
+							<input type="password" name="userpw" value="${member.userpw }">
 						</td>
 					</tr>
 					<tr>
@@ -46,13 +46,7 @@
 					<tr>
 						<th>주소</th>
 						<td>
-							<input type="text" name="address" value="${member.addr1 }"><br>
-						</td>
-					</tr>
-					<tr>
-						<th>가입일</th>
-						<td>
-							<input type="date" name="regdate" value="${member.regdate }">
+							<input type="text" name="address" value="${member.address }"><br>
 						</td>
 					</tr>
 					<tr>
@@ -62,16 +56,10 @@
 						</td>
 					</tr>
 					<tr>
-						<th>방문횟수</th>
-						<td>
-							${member.visited }
-						</td>
-					</tr>
-					<tr>
 						<td colspan="2">
 							<input type="submit" value="수정" class="button is-info"/>
 							<input type="reset" value="취소" class="button is-info"/>
-							<a href="${path1 }/DelMemberCtrl?num=${member.userid }" class="button is-info">삭제</a>
+							<a href="${path1 }/DelMemberCtrl?userid=${member.userid }" class="button is-info">삭제</a>
 							<a href="${path1 }/GetMemberListCtrl" class="button is-info">목록</a>
 						</td>
 					</tr>

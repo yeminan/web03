@@ -24,7 +24,7 @@ public class myPageCtrl extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
-		String userid = (String) session.getAttribute("sid");
+		String userid = (String) session.getAttribute("userid");
 		PaymentDAO dao = new PaymentDAO();
 		ArrayList<PaymentVO> payList = dao.getPaymentList(userid);
 		if(payList != null) {

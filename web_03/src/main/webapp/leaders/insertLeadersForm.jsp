@@ -59,6 +59,9 @@
 							<input type="file" accept="*.jpeg,*.jpg, *.png, *.gif" name="limg" value="${leaders.limg }" class="input is-normal">
 							</c:if>
 							<img src="${path1 }/upload/${leaders.limg }" alt="${leaders.limg }" />
+							<c:if test="${sid!='admin' }">
+							<img src="${path1 }/${leaders.limg }" alt="${leaders.limg }">
+							</c:if>
 						</td>
 					</tr>
 					<tr>

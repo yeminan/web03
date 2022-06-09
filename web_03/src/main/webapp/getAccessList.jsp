@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 목록</title>
+<title>접속자 목록</title>
 <jsp:include page="common.jsp"></jsp:include>
 <style>
 .page_tit { border-bottom:1px solid #cdcdcd; margin-bottom:25px; }

@@ -37,7 +37,7 @@
 						</td>
 					</tr>
 					<tr>
-						<th>상품이미지</th>
+						<th>이미지</th>
 						<td>
 							<input type="text" name="nickname" value="admin">
 						</td>

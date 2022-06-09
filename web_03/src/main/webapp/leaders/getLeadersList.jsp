@@ -51,17 +51,12 @@ margin-top:20px; margin-bottom:15px; }
 					<div class="hidden item1">${status.count }</div>
 					<h3 class="item_tit"><a href="${path1 }/GetLeadersCtrl?lcode=${vo.lcode }">${vo.ltitle }</a></h3>
 					<p class="item_com">${vo.lprice }</p>
+					
 					<p class="item_data">
 						
 						<span>이름 : ${vo.ltitle }</span>
 						<p>
-						<span>상품코드 : ${vo.lcode }</span>
-						<p>
 						<span>카테고리: ${vo.lcategory }</span>
-						<p>
-						<span>이미지 : ${vo.limg }</span><br>
-						<p>
-						<span>내용 : ${vo.lcontent }</span>
 						<p>
 						<span>남은 수량 : ${vo.lamount }</span>
 						<p>

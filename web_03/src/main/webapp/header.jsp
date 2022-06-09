@@ -78,7 +78,7 @@
 		        <a class="navbar-link">
 		       틀니용품
 		        </a>
-		          <a class="navbar-item" href="GetDiscountListCtrl"></a>
+		          <a class="navbar-item" href=""></a>
       				</div>
       				
 			<div class="navbar-item has-dropdown is-hoverable">
@@ -133,7 +133,8 @@
 	      <!-- 로그인 사용자 -->
 	      <div class="navbar-item">
 	        <div class="buttons">
-	          <a href="${path }/myPageCtrl?userid=${sid }" class="button is-primary">
+	          <a href="${path }/GetMemberCtrl?userid=${sid}" class="button is-primary">
+	          <%-- myPageCtrl?userid=${sid }"  --%>
 	            <strong>회원정보수정</strong>
 	          </a>
 	           <a href="${path }/GetBasketListCtrl" class="button is-light">
@@ -161,6 +162,9 @@
 		          <a href="${path }/GetLeadersListCtrl" class="button is-light">
 		            제품관리
 		            </a>
+		          <a href="${path }/GetPaymentListCtrl" class="button is-light">
+		            판매관리
+		          </a>
 		            <a href="${path }/AccessListCtrl" class="button is-light">
 		            접속자관리
 		          </a>

@@ -49,7 +49,7 @@ public class MemberDAO {
 			String pw = Base64.getEncoder().encodeToString(vo.getUserpw().getBytes());
 			try {
 				conn = JDBCConnection.getConnection();
-				sql = "update member set userpw=?, email=?, tel=?, address=?, birth=? where userid=?)";
+				sql = "update member set userpw=?, email=?, tel=?, address=?, birth=? where userid=?";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, pw);
 				pstmt.setString(2, vo.getEmail());
@@ -76,7 +76,7 @@ public class MemberDAO {
 		public int delMember(String uid) { //회원탈퇴
 			try {
 				conn = JDBCConnection.getConnection();
-				sql = "delete from member where userid=?)";
+				sql = "delete from member where userid=?";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, uid);
 				cnt = pstmt.executeUpdate();

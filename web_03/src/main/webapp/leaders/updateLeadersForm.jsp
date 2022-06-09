@@ -26,13 +26,13 @@
 					<tr>
 						<th>제목</th>
 						<td>
-							<input type="text" name="title" value="" required>
+							<input type="text" name="title" value="ltitle" required>
 						</td>
 					</tr>
 					<tr>
-						<th>작성자</th>
+						<th>상품코드</th>
 						<td>
-							<input type="text" name="nickname" value="admin">
+							<input type="text" name="lcode" value="lcode">
 						</td>
 					</tr>
 					<tr>
