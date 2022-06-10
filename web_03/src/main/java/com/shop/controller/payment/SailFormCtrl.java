@@ -22,14 +22,14 @@ public class SailFormCtrl extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		int gno = Integer.parseInt(request.getParameter("gno"));
+		int lcode = Integer.parseInt(request.getParameter("lcode"));
 		int bno = 0;
 		if(request.getParameter("bno")!=null) bno = Integer.parseInt(request.getParameter("bno"));
 //		String gcolor = request.getParameter("gcolor");
 //		String gsize = request.getParameter("gsize");
 		
 		PaymentDAO dao = new PaymentDAO();
-		LeadersVO goods = dao.callByPay(gno);
+		LeadersVO goods = dao.callByPay(lcode);
 		if(goods != null) {
 			request.setAttribute("goods", goods);
 			if(bno!=0) request.setAttribute("bno", bno);

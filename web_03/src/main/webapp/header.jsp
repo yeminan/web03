@@ -54,7 +54,7 @@
 		         칫솔
 		        </a>
 		   <div class="navbar-dropdown">
-		          <a class="navbar-item" href="GetLeadersListCtrl">
+		          <a class="navbar-item" href="${path }/GetLeadersListCtrl">
 		            성인
 		          </a>
 		          <a class="navbar-item">
@@ -140,7 +140,7 @@
 	           <a href="${path }/GetBasketListCtrl" class="button is-light">
 	            장바구니
 	          </a>
-	          <a href="${path }/member/myPage.jsp" class="button is-light">
+	          <a href="${path }/GetPaymentListCtrl" class="button is-light">
 	            마이페이지
 	          </a>
 	          

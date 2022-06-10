@@ -46,7 +46,7 @@ margin-top:20px; margin-bottom:15px; }
 			<c:forEach items="${list }" var="vo" varStatus="status">
 				<li>
 					<div class="img_fr">
-						<img src="${path1 }/${vo.limg }" alt="${vo.limg }">
+						<img src="${path1 }/upload/${vo.limg }" alt="${vo.limg }">
 					</div>
 					<div class="hidden item1">${status.count }</div>
 					<h3 class="item_tit"><a href="${path1 }/GetLeadersCtrl?lcode=${vo.lcode }">${vo.ltitle }</a></h3>

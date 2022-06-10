@@ -64,7 +64,7 @@
 					<tr>
 						<th>제품코드</th>
 						<td>
-							<span>${payment.gno }</span>
+							<span>${payment.lcode }</span>
 							<input type="hidden" name="lcode" value="${payment.lcode }">
 						</td>
 					</tr>

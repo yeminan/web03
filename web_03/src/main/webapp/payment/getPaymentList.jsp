@@ -36,6 +36,7 @@ margin-top:20px; margin-bottom:15px; }
 					<th>상품코드</th>
 					<th>결제금액</th>
 					<th>결제일</th>
+					<th>수신상태<th>
 				</tr>
 			</thead>
 			<tbody>
@@ -46,6 +47,7 @@ margin-top:20px; margin-bottom:15px; }
 					<td><a href="${path1 }/GetLeadersCtrl?lcode=${vo.lcode }" target="_blank">${vo.lcode }</a></td>
 					<td>${vo.money }</td>
 					<td>${vo.sdate }</td>
+					<td>${vo.rstatus }</td>
 				</tr>
 			</c:forEach>
 			<tr>

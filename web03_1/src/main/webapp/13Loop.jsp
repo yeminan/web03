@@ -4,6 +4,7 @@
     <%@ page import="java.util.*" %>
     <%@ page import="com.example.Human" %>
 <%
+	/* 다른 곳에서 해당 자료를 forward해야 출력이 가능  */
 	String[] names = {"홍길동","김길동","이길동","박길동"};
 	ArrayList<String> namelist = new ArrayList<String>();
 	namelist.add("정길동");
@@ -39,14 +40,81 @@
 	h4.setAge(56);
 	h4.setHobby("스킨스쿠버");
 	humanList.add(h4);
+	
+	
+	String irum="이민환-여승원-임소희-정우희";
+	
+	
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>forEach, forToken</title>
+<title>forEach, forToken을 활용한 반복문</title>
 </head>
 <body>
+<h2>forEach</h2>
+<h3>일반 for문 처럼 활용 </h3>
+<c:set var="result" value="0"></c:set>
+<c:forEach var="i" begin="1" end="100" step="2">
+	<c:set var="result" value="${result+i }"></c:set>
+</c:forEach>
+<p> 결과 : ${result }</p>
 
+<h3>배열 for문 활용</h3>
+
+<c:forEach items="${names }" var="item" varStatus="status">
+	<p>${status.count }번 학생 : ${name }</p>
+</c:forEach>
+<hr>
+<h3>리스트의 for문 활용 </h3>
+<c:forEach items="${namelist }" var="name" varStatus="status">
+	<p>${status.count }번의 학생 :${name }</p>
+</c:forEach>
+<hr>
+<h3>리스트 제네릭의 for문 활용</h3>
+<c:forEach items="${humanList }" var="human" varStatus="status">
+	<p>${status.count }번 학생 :</p>
+	<p>이름 : ${human.name }</p>
+	<p>국가 : ${human.country }</p>
+	<p>나이 : ${human.age }</p>
+	<p>취미 : ${human.hobby }</p>
+</c:forEach>
+<hr>
+<h3>맵의 for문 활용</h3>
+<%-- <c:forEach items="${map }" var="item">
+	<p>${item.key} : ${item.value }</p>
+</c:forEach> --%>
+<hr>
+<h3>맵 제네릭 for문 활용</h3>
+<%-- <c:forEach items="${humanMap }" var="human">
+	<p>${human.key }</p>
+	<p>${human.value }</p>
+</c:forEach> --%>
+<hr><hr>
+<h2>forToKen</h2>
+<h3>구분기호가 하나인 경우</h3>
+<table>
+<thead>
+	<tr><th>이름</th></tr>
+</thead>
+<tbody>
+<c:forTokens items="정길동-장길동-흑길동-백길동" delims="-" var="name">
+	<tr><td>${name }</td></tr>
+</c:forTokens>
+</tbody>
+</table>
+<hr>
+<h3>구분기호가 여러개 인 경우</h3>
+<table>
+<thead>
+<tr><th>이름</th></tr>
+</thead>
+<tbody>
+<c:forTokens items="정길동/장길동*흑길동 백길동" delims="/* " var="name">
+	<tr><td>${name }</td></tr>
+</c:forTokens>
+</tbody>
+</table>
 </body>
 </html>

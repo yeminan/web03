@@ -36,7 +36,7 @@ public class EditLeadersCtrl extends HttpServlet {
 		String lcategory = multi.getParameter("lcategory");
 		String lcontent=multi.getParameter("lcontent");
 		String limg= "";
-		int ldelivery=Integer.parseInt(multi.getParameter("ldelivery"));
+		int ldelivery=Integer.parseInt(multi.getParameter("ldelivery")); 
 		try {			
 			if (multi.getFilesystemName("limg") != null) {
 				String name = multi.getFilesystemName("limg");
@@ -53,15 +53,14 @@ public class EditLeadersCtrl extends HttpServlet {
 		vo.setLcategory(lcategory);
 		vo.setLcontent(lcontent);
 		vo.setLimg(limg);
-		vo.setLdelivery(ldelivery);
+		vo.setLdelivery(ldelivery); 
 		
 		LeadersDAO le=new LeadersDAO();
-		
 		int cnt = le.editLeadersVO(vo);
 		if(cnt>0) {  
 			response.sendRedirect("GetLeadersListCtrl");
 		} else { 
-			response.sendRedirect("./leaders/getLeaders.jsp");
+			response.sendRedirect("GetLeadersCtrl?lcode="+lcode);
 		}	
 	}
 

@@ -265,10 +265,8 @@ public class LeadersDAO {
 				}
 				return num;
 			}
-		public int countLeaders1(int lcode) {
-			// TODO Auto-generated method stub
-			return 0;
-		}
+	
+		
 		
 		}
 

@@ -43,7 +43,7 @@
 					<tr>
 						<th>상품코드</th>
 						<td>
-							<input type="text" name="gno" value="${payment.gno }" readonly required>
+							<input type="text" name="lcode" value="${payment.lcode }" readonly required>
 						</td>
 					</tr>
 					<tr>

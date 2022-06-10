@@ -22,12 +22,13 @@
 						<th>상품이름</th>
 						<td>
 						<c:if test="${num=='admin' }">
-							<input type="text" name="ltitle" value="${leaders.ltitle }">
+							<p>${leaders.lcode }</p>
+							<input type="text" name="lcode" value="${leaders.lcode }">
 						</c:if>
 						<c:if test="${num!='admin' }">
-							<p>${leaders.lcode }</p>
+							<p>${leaders.ltitle }</p>
 						</c:if>
-							<input type="hidden" name="lcode" value="${leaders.lcode }">
+							<input type="hidden" name="ltitle" value="${leaders.ltitle }">
 						</td>
 					<tr>
 						<th>상품수량</th>

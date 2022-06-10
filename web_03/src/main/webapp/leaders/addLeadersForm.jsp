@@ -19,21 +19,6 @@
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
-						<th>카테고리</th>
-						<td>
-							<select name="lcategory" class="select is-primary" required>
-								<option value="lcode">상품코드</option>
-								<option value="ltitle">상품이름</option>
-								<option value="lamount">상품수량</option>
-								<option value="lprice">상품가격</option>
-								<option value="limg">상품이미지</option>
-								<option value="lcategory">상품카테고리</option>
-								<option value="lcontent">상품내용</option>
-								<option value="ldelivery">배송료</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
 						<th>상품코드</th>
 						<td>
 							<input type="number" name="lcode" min="1" max="1000" step="1" class="input is-primary" required>
@@ -42,20 +27,20 @@
 					<tr>
 						<th>상품이름</th>
 						<td>
-							<input type="number" name="ltitle" class="input is-primary" required>
+							<input type="text" name="ltitle" class="input is-primary" required>
 						</td>
 					</tr>
 					
 					<tr>
 						<th>상품 수량</th>
 						<td>
-							<input type="text" name="lprice" class="input is-primary">
+							<input type="number" name="lprice" min="1" max="20" step="1" class="input is-primary">
 						</td>
 					</tr>
 					<tr>
 						<th>상품 가격</th>
 						<td>
-							<input type="number" name="lamount" min="1000" max="10000" class="input is-primary">
+							<input type="number" name="lamount" min="1000" max="50000" class="input is-primary">
 						</td>
 					</tr>
 					<tr>
@@ -65,9 +50,14 @@
 						</td>
 					</tr>
 					<tr>
-						<th>상품 카테고리</th>
+						<th>카테고리</th>
 						<td>
-							<input type="submit" name="lcategory" class="input is-primary">
+							<select name="lcategory" class="select is-primary" required>
+								<option value="lcategory">성인</option>
+								<option value="lcategory">청소년</option>
+								<option value="lcategory">어린이</option>
+								<option value="lcategory">유아</option>
+							</select>
 						</td>
 					</tr>
 					<tr>

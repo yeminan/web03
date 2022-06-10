@@ -51,14 +51,15 @@ lcontent varchar(3000),
 ldelivery number);
 
 --leaders더미데이터 추가
-insert into leaders values(1,'이중슬림모',10,18000,'성인','img/brush3.jpg','성인용 이중슬림모 칫솔',2500);
-insert into leaders values(2,'슬림모',15,18000,'성인','img/brush6.jpg','성인용 슬림모 칫솔',2500);
-insert into leaders values(3,'일반모',10,15000,'성인','img/brush1.jpg','성인용 일반모 칫솔',2500);
-insert into leaders values(11,'일반모',5,11000,'청소년','img/brush5.jpg','청소년용 일반모 칫솔',2500);
-insert into leaders values(12,'이중슬림모',11,11000,'청소년','img/brush4.jpg','청소년용 이중슬림모 칫솔',2500);
-insert into leaders values(22,'이중슬림모',8,10000,'어린이','img/brush.jpg','어린이용 이중슬림모 칫솔',2500);
+insert into leaders values(1,'이중슬림모',10,18000,'성인','/brush3.jpg','성인용 이중슬림모 칫솔',2500);
+insert into leaders values(2,'슬림모',15,18000,'성인','/brush6.jpg','성인용 슬림모 칫솔',2500);
+insert into leaders values(3,'일반모',10,15000,'성인','/brush1.jpg','성인용 일반모 칫솔',2500);
+insert into leaders values(11,'일반모',5,11000,'청소년','/brush5.jpg','청소년용 일반모 칫솔',2500);
+insert into leaders values(12,'이중슬림모',11,11000,'청소년','/brush4.jpg','청소년용 이중슬림모 칫솔',2500);
+insert into leaders values(22,'이중슬림모',8,10000,'어린이','/brush.jpg','어린이용 이중슬림모 칫솔',2500);
 select * from leaders;
 delete from leaders where lcode=1;
+drop table leaders;
 commit;
 --접속자 테이블 
 CREATE TABLE db_access (
